@@ -5,7 +5,7 @@
     
 <meta charset="utf-8" >
 
-<title>FC容器——BFC容器 | Gridea</title>
+<title>FC容器——IFC容器应用场景 | Gridea</title>
 <meta name="description" content="温故而知新">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -80,46 +80,41 @@
       <div class="content-container">
         <div class="post-detail">
           
-          <h2 class="post-title">FC容器——BFC容器</h2>
+          <h2 class="post-title">FC容器——IFC容器应用场景</h2>
           <div class="post-info post-detail-info">
             <span><i class="icon-calendar-outline"></i> 2022-03-29</span>
             
           </div>
           <div class="post-content">
-            <h1 id="bfc容器">BFC容器</h1>
-<h2 id="概念">概念：</h2>
-<p>BFC（Block Formatting Context）块级格式化上下文。指的是页面中的一个标签，不一定是块级标签，BFC渲染的是一块区域，只要标签满足一定条件就是一个BFC区域。<br>
-浮动元素、绝对定位元素、非块级盒子的块级容器（inline-blocks, table-cells, and table-captions），以及overflow属性不为visible的块级盒子，都会为为其内容创建新的BFC。</p>
-<p>##特点：</p>
-<ol>
-<li>内部的块盒和行盒遵循标准文档流，在垂直方向一个接一个放置。<br>
-<img src="https://hsuchiaping.github.io//post-images/1648555905756.webp" alt="BFC1" loading="lazy"></li>
-<li>Box垂直方向的距离，由margin决定。容器内相邻的box的margin会折叠，距离为较大的margin。不同BFC容器的相邻box垂直方向发生margin折叠。<br>
-<img src="https://hsuchiaping.github.io//post-images/1648556048842.webp" alt="BFC2" loading="lazy"></li>
-<li>每个元素的外边缘（margin-left）与容器的左边框相接触（border-left）相接触，浮动也是如此，除非盒子创建了一个新的BFC。<br>
-<img src="https://hsuchiaping.github.io//post-images/1648555905756.webp" alt="BFC1" loading="lazy"></li>
-<li>BFC区域不会和float box重叠。让元素浮动时，原本空间被下一个元素挤占，当设置下一个元素BFC时，就不会挤占。并排排列。</li>
-<li>BFC是页面上的一个独立的容器，容器里的元素不受容器外元素的影响，反之亦然。</li>
-<li>计算BFC容器的高度时，浮动元素也会参与计算。当BFC容器不设置高度时，如果其中浮动元素的高度最大，BFC容器的高度就是浮动元素的高度。</li>
-<li>可以解决子元素浮动，父元素高度塌陷的问题。高度塌陷问题的原因是，父元素没有设置高度，子元素浮动，不再受父元素的控制，父元素的高度就会塌陷为0。</li>
-</ol>
-<h2 id="如何设置为bfc容器">如何设置为BFC容器：</h2>
-<p>根标签（html就是一个BFC容器）</p>
-<ol>
-<li>设置浮动，但float不为none；</li>
-<li>position为absolute或者fixed；</li>
-<li>display为inline-block、table-cell、table-caption、flex；</li>
-<li>overflow不为visible；</li>
-</ol>
+            <h1 id="ifc容器应用场景">IFC容器应用场景</h1>
+<h2 id="font-size">font-size</h2>
+<p>不同字体的大小会影响行盒高度，值越大，行盒高度越高</p>
+<h2 id="font-family">font-family</h2>
+<p>不同字体类型会影响行盒高度</p>
+<h2 id="height-line-height">height | line-height</h2>
+<p>影响高度</p>
+<h2 id="vertical-align">vertical-align</h2>
+<p>行级元素垂直方向上的对其<br>
+top顶线、middle中线、baseline基线、bottom底线</p>
+<h3 id="文本之间">文本之间</h3>
+<p>设置当前元素自己参考哪个位置与其他元素对其，默认是基线</p>
+<h3 id="文本与图片之间">文本与图片之间</h3>
+<p>文本基线对齐图片底部<br>
+文本设置vertical-align：文本按照自己的参考线与图片的底部对齐<br>
+图片设置vertical-align：图片按照自己的参考线与文本对齐</p>
+<h3 id="表格中文字垂直对齐">表格中文字垂直对齐</h3>
+<p>top：顶部对齐<br>
+middle：居中<br>
+bottom：底部对齐</p>
 
           </div>
         </div>
 
         
           <div class="next-post">
-            <a class="purple-link" href="https://hsuchiaping.github.io/post/fc-rong-qi-gai-nian/">
+            <a class="purple-link" href="https://hsuchiaping.github.io/post/fc-rong-qi-ifc/">
               <h3 class="post-title">
-                下一篇：FC容器——概念
+                下一篇：FC容器——IFC
               </h3>
             </a>
           </div>

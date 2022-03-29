@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://hsuchiaping.github.io/</id>
     <title>Gridea</title>
-    <updated>2022-03-29T13:01:56.385Z</updated>
+    <updated>2022-03-29T13:17:56.263Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://hsuchiaping.github.io/"/>
     <link rel="self" href="https://hsuchiaping.github.io/atom.xml"/>
@@ -10,6 +10,62 @@
     <logo>https://hsuchiaping.github.io/images/avatar.png</logo>
     <icon>https://hsuchiaping.github.io/favicon.ico</icon>
     <rights>All rights reserved 2022, Gridea</rights>
+    <entry>
+        <title type="html"><![CDATA[FC容器——IFC容器应用场景]]></title>
+        <id>https://hsuchiaping.github.io/post/fc-rong-qi-ifc-rong-qi-ying-yong-chang-jing/</id>
+        <link href="https://hsuchiaping.github.io/post/fc-rong-qi-ifc-rong-qi-ying-yong-chang-jing/">
+        </link>
+        <updated>2022-03-29T13:10:31.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="ifc容器应用场景">IFC容器应用场景</h1>
+<h2 id="font-size">font-size</h2>
+<p>不同字体的大小会影响行盒高度，值越大，行盒高度越高</p>
+<h2 id="font-family">font-family</h2>
+<p>不同字体类型会影响行盒高度</p>
+<h2 id="height-line-height">height | line-height</h2>
+<p>影响高度</p>
+<h2 id="vertical-align">vertical-align</h2>
+<p>行级元素垂直方向上的对其<br>
+top顶线、middle中线、baseline基线、bottom底线</p>
+<h3 id="文本之间">文本之间</h3>
+<p>设置当前元素自己参考哪个位置与其他元素对其，默认是基线</p>
+<h3 id="文本与图片之间">文本与图片之间</h3>
+<p>文本基线对齐图片底部<br>
+文本设置vertical-align：文本按照自己的参考线与图片的底部对齐<br>
+图片设置vertical-align：图片按照自己的参考线与文本对齐</p>
+<h3 id="表格中文字垂直对齐">表格中文字垂直对齐</h3>
+<p>top：顶部对齐<br>
+middle：居中<br>
+bottom：底部对齐</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[FC容器——IFC]]></title>
+        <id>https://hsuchiaping.github.io/post/fc-rong-qi-ifc/</id>
+        <link href="https://hsuchiaping.github.io/post/fc-rong-qi-ifc/">
+        </link>
+        <updated>2022-03-29T13:02:20.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="ifc">IFC</h1>
+<h2 id="概念">概念：</h2>
+<p>Inline Formatting Context 行内格式化上下文 （行盒），是一行渲染区域规则，规定一行内元素如何排列。</p>
+<h2 id="特点">特点：</h2>
+<ol>
+<li>在IFC中，盒子水平放置的，排列一个接一个，从包含块的边界开始；</li>
+<li>在IFC中，盒子水平方向的margin、padding是有效的；</li>
+<li>这些盒子有多种对齐方式，底部、基线、中线等等；</li>
+<li>IFC负责的矩形区域称为行盒，整个一行的显示区域。</li>
+<li>行盒宽度由一行内所有的内容决定；</li>
+<li>高度由元素最高点到最低点决定。</li>
+</ol>
+<h2 id="影响ifc的css属性">影响IFC的css属性</h2>
+<ol>
+<li>font-size</li>
+<li>font-family</li>
+<li>height</li>
+<li>line-height</li>
+<li>vertica-align：设置行级元素在垂直方向上的对齐方式</li>
+</ol>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[FC容器——BFC容器的应用]]></title>
         <id>https://hsuchiaping.github.io/post/fc-rong-qi-bfc-rong-qi-de-ying-yong/</id>
