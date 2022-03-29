@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://hsuchiaping.github.io/</id>
     <title>Gridea</title>
-    <updated>2022-03-29T11:45:05.913Z</updated>
+    <updated>2022-03-29T12:23:46.481Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://hsuchiaping.github.io/"/>
     <link rel="self" href="https://hsuchiaping.github.io/atom.xml"/>
@@ -11,13 +11,38 @@
     <icon>https://hsuchiaping.github.io/favicon.ico</icon>
     <rights>All rights reserved 2022, Gridea</rights>
     <entry>
+        <title type="html"><![CDATA[FC容器——BFC容器]]></title>
+        <id>https://hsuchiaping.github.io/post/fc-rong-qi-bfc-rong-qi/</id>
+        <link href="https://hsuchiaping.github.io/post/fc-rong-qi-bfc-rong-qi/">
+        </link>
+        <updated>2022-03-29T11:46:34.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="bfc容器">BFC容器</h1>
+<h2 id="概念">概念：</h2>
+<p>BFC（Block Formatting Context）块级格式化上下文。指的是页面中的一个标签，不一定是块级标签，BFC渲染的是一块区域，只要标签满足一定条件就是一个BFC区域。<br>
+浮动元素、绝对定位元素、非块级盒子的块级容器（inline-blocks, table-cells, and table-captions），以及overflow属性不为visible的块级盒子，都会为为其内容创建新的BFC。</p>
+<p>##特点：</p>
+<ol>
+<li>内部的块盒和行盒遵循标准文档流，在垂直方向一个接一个放置。<br>
+<img src="https://hsuchiaping.github.io//post-images/1648555905756.webp" alt="BFC1" loading="lazy"></li>
+<li>Box垂直方向的距离，由margin决定。容器内相邻的box的margin会折叠，距离为较大的margin。不同BFC容器的相邻box垂直方向发生margin折叠。<br>
+<img src="https://hsuchiaping.github.io//post-images/1648556048842.webp" alt="BFC2" loading="lazy"></li>
+<li>每个元素的外边缘（margin-left）与容器的左边框相接触（border-left）相接触，浮动也是如此，除非盒子创建了一个新的BFC。<br>
+<img src="https://hsuchiaping.github.io//post-images/1648555905756.webp" alt="BFC1" loading="lazy"></li>
+<li>BFC区域不会和float box重叠。float元素不会浮在BFC上。</li>
+<li>BFC是页面上 的一个独立的容器，容器里的元素不受容器外元素的影响，反之亦然。</li>
+<li>计算BFC容器的高度时，浮动元素也会参与计算。</li>
+<li>可以解决自元素浮动，父元素高度塌陷的问题。</li>
+</ol>
+]]></content>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[FC容器——概念]]></title>
         <id>https://hsuchiaping.github.io/post/fc-rong-qi-gai-nian/</id>
         <link href="https://hsuchiaping.github.io/post/fc-rong-qi-gai-nian/">
         </link>
         <updated>2022-03-29T11:39:39.000Z</updated>
         <content type="html"><![CDATA[<h1 id="fc容器的概念">FC容器的概念：</h1>
-<pre><code>    FC（Formatting Context）即格式化上下文。是一块渲染区域，决定容器内的子元素如何排列，及元素之间的关系。常见的FC容器有BFC（Block Formatting Context）、IFC（Inline Formatting Context）。</code></pre>
+<p>FC（Formatting Context）即格式化上下文。是一块渲染区域，决定容器内的子元素如何排列，及元素之间的关系。常见的FC容器有BFC（Block Formatting Context）、IFC（Inline Formatting Context）。</p>
 ]]></content>
     </entry>
     <entry>
