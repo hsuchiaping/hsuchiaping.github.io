@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://hsuchiaping.github.io/</id>
     <title>Gridea</title>
-    <updated>2022-03-29T08:37:23.561Z</updated>
+    <updated>2022-03-29T08:42:43.925Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://hsuchiaping.github.io/"/>
     <link rel="self" href="https://hsuchiaping.github.io/atom.xml"/>
@@ -11,13 +11,27 @@
     <icon>https://hsuchiaping.github.io/favicon.ico</icon>
     <rights>All rights reserved 2022, Gridea</rights>
     <entry>
-        <title type="html"><![CDATA[2022-3-29 16:28:59]]></title>
+        <title type="html"><![CDATA[语义化标签]]></title>
         <id>https://hsuchiaping.github.io/post/2022-3-29-162859/</id>
         <link href="https://hsuchiaping.github.io/post/2022-3-29-162859/">
         </link>
         <updated>2022-03-29T08:28:55.000Z</updated>
         <content type="html"><![CDATA[<!-- more -->
-<p>😋撒的结合设计费哈哈</p>
+<p>语义化标签：</p>
+<header>
+</header>
+<main>
+    <aside>
+    </aside>
+    <article>
+        <section>
+            <div>
+            </div>
+        </section>
+    </article>
+</main>
+<footer>
+</footer>
 ]]></content>
     </entry>
     <entry>
