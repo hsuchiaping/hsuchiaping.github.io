@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://hsuchiaping.github.io/</id>
     <title>Gridea</title>
-    <updated>2022-03-29T09:56:21.992Z</updated>
+    <updated>2022-03-29T09:58:50.953Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://hsuchiaping.github.io/"/>
     <link rel="self" href="https://hsuchiaping.github.io/atom.xml"/>
@@ -17,8 +17,13 @@
         </link>
         <updated>2022-03-29T08:28:55.000Z</updated>
         <content type="html"><![CDATA[<!-- more -->
-<p>语义化标签：<br>
-<code>&lt;html&gt;</code></p>
+<p>语义化标签：</p>
+<pre><code>&lt;header&gt;
+    
+&lt;/header&gt;
+
+
+</code></pre>
 ]]></content>
     </entry>
     <entry>
