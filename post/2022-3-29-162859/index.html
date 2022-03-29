@@ -5,14 +5,14 @@
     
 <meta charset="utf-8" >
 
-<title>H5新特性——语义化标签 | Gridea</title>
+<title>HTML5新特性——语义化标签 | Gridea</title>
 <meta name="description" content="温故而知新">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://hsuchiaping.github.io//favicon.ico?v=1648549567955">
+<link rel="shortcut icon" href="https://hsuchiaping.github.io//favicon.ico?v=1648552197602">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://hsuchiaping.github.io//styles/main.css">
 
@@ -30,7 +30,7 @@
   <div class="site-header">
     <div class="left">
       <a href="https://hsuchiaping.github.io/">
-        <img class="avatar" src="https://hsuchiaping.github.io//images/avatar.png?v=1648549567955" alt="" width="32px" height="32px">
+        <img class="avatar" src="https://hsuchiaping.github.io//images/avatar.png?v=1648552197602" alt="" width="32px" height="32px">
       </a>
       <a href="https://hsuchiaping.github.io/">
         <h1 class="site-title">Gridea</h1>
@@ -80,14 +80,27 @@
       <div class="content-container">
         <div class="post-detail">
           
-          <h2 class="post-title">H5新特性——语义化标签</h2>
+          <h2 class="post-title">HTML5新特性——语义化标签</h2>
           <div class="post-info post-detail-info">
             <span><i class="icon-calendar-outline"></i> 2022-03-29</span>
             
           </div>
           <div class="post-content">
-            <!-- more -->
-<p>语义化标签：</p>
+            <h1 id="语义化标签">语义化标签</h1>
+<h2 id="标签">标签：</h2>
+<pre><code>1. header/hgrounp   放在页面顶部，放导航栏或者标题。
+2. nav  导航栏，最好放置主要链接
+3. aside 侧边栏，放置广告、友情链接等
+4. footer 页面底部，版权信息、联系方式等
+5. article 主要内容放置区，文章、博客等
+6. section 一组或者一内容
+7. time 带格式的事件标签
+8. mark 高亮
+9. address 区块容器，放置联系信息
+</code></pre>
+<h2 id="基本结构">基本结构：</h2>
+<figure data-type="image" tabindex="1"><img src="https://hsuchiaping.github.io//post-images/1648551165407.png" alt="语义化标签大概结构图" loading="lazy"></figure>
+<h2 id="代码结构">代码结构：</h2>
 <pre><code>&lt;header&gt;
     &lt;nav&gt;
     &lt;/nav&gt;
@@ -96,15 +109,33 @@
     &lt;aside&gt;
     &lt;/aside&gt;
     &lt;section&gt;
-        &lt;div&gt;
-        &lt;/div&gt;
+        &lt;table&gt;
+            &lt;thead&gt;
+                &lt;tr&gt;
+                    &lt;td&gt;
+                    &lt;/td&gt;
+                &lt;/tr&gt;
+            &lt;thead&gt;
+            &lt;tbody&gt;
+                &lt;tr&gt;
+                    &lt;td&gt;
+                    &lt;/td&gt;
+                &lt;/tr&gt;
+            &lt;/tbody&gt;
+        &lt;/table&gt;
     &lt;/section&gt;
 &lt;/main&gt;
 &lt;footer&gt;
 &lt;/footer&gt;
-
-
 </code></pre>
+<h2 id="优点">优点：</h2>
+<ol>
+<li>在无css样式时，也能很好的呈现页面的<strong>内容结构、代码结构</strong>；</li>
+<li>相比<code>&lt;div&gt;</code>标签有更<strong>丰富具体的含义</strong>，方便开发和维护；</li>
+<li>有利于<strong>SEO搜索优化</strong>。在搜索引擎搜索时，能清晰快捷地展现给搜索引擎内容；</li>
+<li>方便<strong>移动设备及盲人阅读器</strong>等的使用；</li>
+<li>有利于<strong>合作</strong>，遵守<strong>W3C</strong>的标准。</li>
+</ol>
 
           </div>
         </div>
