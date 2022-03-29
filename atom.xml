@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://hsuchiaping.github.io/</id>
     <title>Gridea</title>
-    <updated>2022-03-29T12:23:46.481Z</updated>
+    <updated>2022-03-29T12:46:02.863Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://hsuchiaping.github.io/"/>
     <link rel="self" href="https://hsuchiaping.github.io/atom.xml"/>
@@ -28,10 +28,18 @@
 <img src="https://hsuchiaping.github.io//post-images/1648556048842.webp" alt="BFC2" loading="lazy"></li>
 <li>每个元素的外边缘（margin-left）与容器的左边框相接触（border-left）相接触，浮动也是如此，除非盒子创建了一个新的BFC。<br>
 <img src="https://hsuchiaping.github.io//post-images/1648555905756.webp" alt="BFC1" loading="lazy"></li>
-<li>BFC区域不会和float box重叠。float元素不会浮在BFC上。</li>
-<li>BFC是页面上 的一个独立的容器，容器里的元素不受容器外元素的影响，反之亦然。</li>
-<li>计算BFC容器的高度时，浮动元素也会参与计算。</li>
-<li>可以解决自元素浮动，父元素高度塌陷的问题。</li>
+<li>BFC区域不会和float box重叠。让元素浮动时，原本空间被下一个元素挤占，当设置下一个元素BFC时，就不会挤占。并排排列。</li>
+<li>BFC是页面上的一个独立的容器，容器里的元素不受容器外元素的影响，反之亦然。</li>
+<li>计算BFC容器的高度时，浮动元素也会参与计算。当BFC容器不设置高度时，如果其中浮动元素的高度最大，BFC容器的高度就是浮动元素的高度。</li>
+<li>可以解决子元素浮动，父元素高度塌陷的问题。高度塌陷问题的原因是，父元素没有设置高度，子元素浮动，不再受父元素的控制，父元素的高度就会塌陷为0。</li>
+</ol>
+<h2 id="如何设置为bfc容器">如何设置为BFC容器：</h2>
+<p>根标签（html就是一个BFC容器）</p>
+<ol>
+<li>设置浮动，但float不为none；</li>
+<li>position为absolute或者fixed；</li>
+<li>display为inline-block、table-cell、table-caption、flex；</li>
+<li>overflow不为visible；</li>
 </ol>
 ]]></content>
     </entry>
