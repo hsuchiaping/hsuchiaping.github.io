@@ -5,7 +5,7 @@
     
 <meta charset="utf-8" >
 
-<title>FC容器——BFC容器 | Gridea</title>
+<title>FC容器——BFC容器的应用 | Gridea</title>
 <meta name="description" content="温故而知新">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -80,46 +80,32 @@
       <div class="content-container">
         <div class="post-detail">
           
-          <h2 class="post-title">FC容器——BFC容器</h2>
+          <h2 class="post-title">FC容器——BFC容器的应用</h2>
           <div class="post-info post-detail-info">
             <span><i class="icon-calendar-outline"></i> 2022-03-29</span>
             
           </div>
           <div class="post-content">
-            <h1 id="bfc容器">BFC容器</h1>
-<h2 id="概念">概念：</h2>
-<p>BFC（Block Formatting Context）块级格式化上下文。指的是页面中的一个标签，不一定是块级标签，BFC渲染的是一块区域，只要标签满足一定条件就是一个BFC区域。<br>
-浮动元素、绝对定位元素、非块级盒子的块级容器（inline-blocks, table-cells, and table-captions），以及overflow属性不为visible的块级盒子，都会为为其内容创建新的BFC。</p>
-<p>##特点：</p>
-<ol>
-<li>内部的块盒和行盒遵循标准文档流，在垂直方向一个接一个放置。<br>
-<img src="https://hsuchiaping.github.io//post-images/1648555905756.webp" alt="BFC1" loading="lazy"></li>
-<li>Box垂直方向的距离，由margin决定。容器内相邻的box的margin会折叠，距离为较大的margin。不同BFC容器的相邻box垂直方向发生margin折叠。<br>
-<img src="https://hsuchiaping.github.io//post-images/1648556048842.webp" alt="BFC2" loading="lazy"></li>
-<li>每个元素的外边缘（margin-left）与容器的左边框相接触（border-left）相接触，浮动也是如此，除非盒子创建了一个新的BFC。<br>
-<img src="https://hsuchiaping.github.io//post-images/1648555905756.webp" alt="BFC1" loading="lazy"></li>
-<li>BFC区域不会和float box重叠。让元素浮动时，原本空间被下一个元素挤占，当设置下一个元素BFC时，就不会挤占。并排排列。</li>
-<li>BFC是页面上的一个独立的容器，容器里的元素不受容器外元素的影响，反之亦然。</li>
-<li>计算BFC容器的高度时，浮动元素也会参与计算。当BFC容器不设置高度时，如果其中浮动元素的高度最大，BFC容器的高度就是浮动元素的高度。</li>
-<li>可以解决子元素浮动，父元素高度塌陷的问题。高度塌陷问题的原因是，父元素没有设置高度，子元素浮动，不再受父元素的控制，父元素的高度就会塌陷为0。</li>
-</ol>
-<h2 id="如何设置为bfc容器">如何设置为BFC容器：</h2>
-<p>根标签（html就是一个BFC容器）</p>
-<ol>
-<li>设置浮动，但float不为none；</li>
-<li>position为absolute或者fixed；</li>
-<li>display为inline-block、table-cell、table-caption、flex；</li>
-<li>overflow不为visible；</li>
-</ol>
+            <h1 id="bfc容器的应用">BFC容器的应用</h1>
+<h2 id="应用一有利于布局含有浮动元素">应用一：有利于布局含有浮动元素</h2>
+<p>每个元素的外边缘（margin-left）与容器的左边框相接触（border-left）相接触，浮动也是如此，除非盒子创建了一个新的BFC。<br>
+<img src="https://hsuchiaping.github.io//post-images/1648555905756.webp" alt="BFC1" loading="lazy"></p>
+<h2 id="应用二多列布局">应用二：多列布局</h2>
+<p>BFC容器不会和浮动元素重叠。并排。<br>
+设置其中某个盒子为BFC，左右两边为float。</p>
+<h2 id="应用三解决相邻盒子的左右margin折叠">应用三：解决相邻盒子的左右margin折叠</h2>
+<p>设置其中一个盒子放置在BFC中。</p>
+<h2 id="应用四解决子元素浮动-父元素高度塌陷">应用四：解决子元素浮动 父元素高度塌陷</h2>
+<p>设置父元素BFC</p>
 
           </div>
         </div>
 
         
           <div class="next-post">
-            <a class="purple-link" href="https://hsuchiaping.github.io/post/fc-rong-qi-gai-nian/">
+            <a class="purple-link" href="https://hsuchiaping.github.io/post/fc-rong-qi-bfc-rong-qi/">
               <h3 class="post-title">
-                下一篇：FC容器——概念
+                下一篇：FC容器——BFC容器
               </h3>
             </a>
           </div>
