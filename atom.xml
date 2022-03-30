@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://hsuchiaping.github.io/</id>
     <title>Gridea</title>
-    <updated>2022-03-30T13:44:58.157Z</updated>
+    <updated>2022-03-30T14:24:04.943Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://hsuchiaping.github.io/"/>
     <link rel="self" href="https://hsuchiaping.github.io/atom.xml"/>
@@ -10,6 +10,41 @@
     <logo>https://hsuchiaping.github.io/images/avatar.png</logo>
     <icon>https://hsuchiaping.github.io/favicon.ico</icon>
     <rights>All rights reserved 2022, Gridea</rights>
+    <entry>
+        <title type="html"><![CDATA[CSS3基础——线性渐变]]></title>
+        <id>https://hsuchiaping.github.io/post/css3-ji-chu-xian-xing-jian-bian/</id>
+        <link href="https://hsuchiaping.github.io/post/css3-ji-chu-xian-xing-jian-bian/">
+        </link>
+        <updated>2022-03-30T13:55:24.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="线性渐变">线性渐变</h1>
+<h2 id="渐变背景">渐变背景</h2>
+<p>比较规则的渐变背景，通常使用1px的图片来设置渐变的效果。不规则的渐变则是用图片做背景，开发和维护较麻烦。CSS3新增渐变背景：线性渐变和径向渐变。使用background-image属性。</p>
+<p>##线性渐变概念：</p>
+<p>沿着一条直线的背景颜色渐变。至少有两种颜色。</p>
+<p>语法：</p>
+<p><code>background-image:linear-gredient(渐变方向，颜色1 位置1 ，颜色2 位置2，颜色3 位置3）</code></p>
+<ol>
+<li>
+<p>渐变方向</p>
+<p>to + 渐变色前进的方向（上下左右八个方位，或者八个角度）</p>
+<ul>
+<li>top = 0deg</li>
+<li>top right = 45deg or -315deg</li>
+<li>right = 90deg or -270deg</li>
+<li>bottom right = 135deg or -225</li>
+<li>bottom = 180deg or -180deg</li>
+<li>bottom left = 225deg or -135deg</li>
+<li>left = 270edg or - 90deg</li>
+<li>top left = 315deg or -45deg</li>
+</ul>
+</li>
+</ol>
+<figure data-type="image" tabindex="1"><img src="https://hsuchiaping.github.io//post-images/1648650211665.png" alt="线性渐变" loading="lazy"></figure>
+<ol start="2">
+<li></li>
+</ol>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[FC容器——IFC容器应用场景]]></title>
         <id>https://hsuchiaping.github.io/post/fc-rong-qi-ifc-rong-qi-ying-yong-chang-jing/</id>

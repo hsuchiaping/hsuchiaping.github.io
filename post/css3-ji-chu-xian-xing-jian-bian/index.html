@@ -5,7 +5,7 @@
     
 <meta charset="utf-8" >
 
-<title>HTML5新特性——新增表单控件 | Gridea</title>
+<title>CSS3基础——线性渐变 | Gridea</title>
 <meta name="description" content="温故而知新">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -80,55 +80,38 @@
       <div class="content-container">
         <div class="post-detail">
           
-          <h2 class="post-title">HTML5新特性——新增表单控件</h2>
+          <h2 class="post-title">CSS3基础——线性渐变</h2>
           <div class="post-info post-detail-info">
-            <span><i class="icon-calendar-outline"></i> 2022-03-29</span>
+            <span><i class="icon-calendar-outline"></i> 2022-03-30</span>
             
           </div>
           <div class="post-content">
-            <h1 id="新增表单控件">新增表单控件</h1>
+            <h1 id="线性渐变">线性渐变</h1>
+<h2 id="渐变背景">渐变背景</h2>
+<p>比较规则的渐变背景，通常使用1px的图片来设置渐变的效果。不规则的渐变则是用图片做背景，开发和维护较麻烦。CSS3新增渐变背景：线性渐变和径向渐变。使用background-image属性。</p>
+<p>##线性渐变概念：</p>
+<p>沿着一条直线的背景颜色渐变。至少有两种颜色。</p>
+<p>语法：</p>
+<p><code>background-image:linear-gredient(渐变方向，颜色1 位置1 ，颜色2 位置2，颜色3 位置3）</code></p>
 <ol>
 <li>
-<p>邮箱输入<br>
-<code>&lt;input type=&quot;email&quot;&gt;</code></p>
+<p>渐变方向</p>
+<p>to + 渐变色前进的方向（上下左右八个方位，或者八个角度）</p>
+<ul>
+<li>top = 0deg</li>
+<li>top right = 45deg or -315deg</li>
+<li>right = 90deg or -270deg</li>
+<li>bottom right = 135deg or -225</li>
+<li>bottom = 180deg or -180deg</li>
+<li>bottom left = 225deg or -135deg</li>
+<li>left = 270edg or - 90deg</li>
+<li>top left = 315deg or -45deg</li>
+</ul>
 </li>
-<li>
-<p>数字输入<br>
-<code>&lt;input type=&quot;number&quot;&gt;</code></p>
-</li>
-<li>
-<p>网址输入<br>
-<code>&lt;input type=&quot;url&quot;&gt;</code></p>
-</li>
-<li>
-<p>搜索输入<br>
-<code>&lt;input type=&quot;search&quot;&gt;</code></p>
-</li>
-<li>
-<p>选取范围<br>
-<code>&lt;inout type=&quot;range&quot;&gt;</code></p>
-</li>
-<li>
-<p>选择颜色<br>
-<code>&lt;input type=&quot;color&quot;&gt;</code></p>
-</li>
-<li>
-<p>时间控件<br>
-<code>&lt;input type=&quot;date/month/week...&quot;&gt;</code></p>
-</li>
-<li>
-<p>文件上传，multiple设置多选<br>
-<code>&lt;input type=&quot;file&quot; multiple&gt;</code></p>
-</li>
-<li>
-<p>选项列表，搜索时自动出现在搜索框下方</p>
-<pre><code>    &lt;input type=&quot;list&quot; list=&quot;mylist&quot;&gt;
-    &lt;listdata id=&quot;mylist&quot;&gt;
-        &lt;option value&gt;ABC&lt;/option&gt;
-        &lt;option value&gt;ABC&lt;/option&gt;
-        &lt;option value&gt;ABC&lt;/option&gt;
-</code></pre>
-</li>
+</ol>
+<figure data-type="image" tabindex="1"><img src="https://hsuchiaping.github.io//post-images/1648650211665.png" alt="线性渐变" loading="lazy"></figure>
+<ol start="2">
+<li></li>
 </ol>
 
           </div>
@@ -136,9 +119,9 @@
 
         
           <div class="next-post">
-            <a class="purple-link" href="https://hsuchiaping.github.io/post/html5-biao-qian-yin-shi-pin-biao-qian/">
+            <a class="purple-link" href="https://hsuchiaping.github.io/post/fc-rong-qi-ifc-rong-qi-ying-yong-chang-jing/">
               <h3 class="post-title">
-                下一篇：HTML5新特性——音视频标签
+                下一篇：FC容器——IFC容器应用场景
               </h3>
             </a>
           </div>
