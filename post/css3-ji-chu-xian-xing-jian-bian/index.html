@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://hsuchiaping.github.io//favicon.ico?v=1648650243062">
+<link rel="shortcut icon" href="https://hsuchiaping.github.io//favicon.ico?v=1648654674892">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://hsuchiaping.github.io//styles/main.css">
 
@@ -30,7 +30,7 @@
   <div class="site-header">
     <div class="left">
       <a href="https://hsuchiaping.github.io/">
-        <img class="avatar" src="https://hsuchiaping.github.io//images/avatar.png?v=1648650243062" alt="" width="32px" height="32px">
+        <img class="avatar" src="https://hsuchiaping.github.io//images/avatar.png?v=1648654674892" alt="" width="32px" height="32px">
       </a>
       <a href="https://hsuchiaping.github.io/">
         <h1 class="site-title">Gridea</h1>
@@ -111,8 +111,30 @@
 </ol>
 <figure data-type="image" tabindex="1"><img src="https://hsuchiaping.github.io//post-images/1648650211665.png" alt="线性渐变" loading="lazy"></figure>
 <ol start="2">
-<li></li>
+<li>
+<p>色标</p>
+<p>即颜色 + 位置，用于控制渐变过度的效果。可以设置多个。<br>
+**   - 颜色可用单词、十六进制、RGB表示。</p>
+<ul>
+<li>位置，用像素、百分比表示。**</li>
+<li>只设置颜色，默认是均匀渐变。</li>
+<li>如果首尾的色标没有设置位置，默认在0%或者100%。</li>
+<li>如果首位的色标没在0%或者100%，会以纯色填充。<br>
+<code>background-image:linear-gredient(to right,red 20% ,blue 40%,yellow 60%)</code></li>
+</ul>
+<p>0 ~ 20%是red，20% ~ 40%是red到blue的渐变，40%到60%是blue到yellow的渐变，60%是yellow</p>
+<ul>
+<li>如果两个相邻的色标位置相同，那么中间渐变范围为0，就会出现断层的效果。<br>
+<code>background-image:linear-gredient(to right,red 0,red 20px,blue 20px)</code></li>
+</ul>
+</li>
 </ol>
+<h2 id="重复性渐变">重复性渐变</h2>
+<ul>
+<li>重复铺设线性渐变，使用<code>repeating-linear-gredient</code></li>
+<li>只有首尾的色标不在0%或100%时，重复线渐变才有效。</li>
+<li>语法 <code>background-iamge:repeating-linear-gredient(to 渐变方向，颜色1 位置1，颜色2 位置2，颜色3 位置3)</code></li>
+</ul>
 
           </div>
         </div>
