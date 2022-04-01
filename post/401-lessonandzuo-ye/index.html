@@ -5,7 +5,7 @@
     
 <meta charset="utf-8" >
 
-<title>330作业 | Gridea</title>
+<title>401-lesson&amp;作业 | Gridea</title>
 <meta name="description" content="温故而知新">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -80,33 +80,74 @@
       <div class="content-container">
         <div class="post-detail">
           
-          <h2 class="post-title">330作业</h2>
+          <h2 class="post-title">401-lesson&amp;作业</h2>
           <div class="post-info post-detail-info">
-            <span><i class="icon-calendar-outline"></i> 2022-03-31</span>
+            <span><i class="icon-calendar-outline"></i> 2022-04-01</span>
             
           </div>
           <div class="post-content">
-            <h1 id="开头">开头</h1>
-<pre><code>    设置所有元素的margin、padding为0.
-    *{
-        margin:0px;
-        padding:0px;
-    } 
-    设置页面和body的高度为满屏。
-    html,body{
-        height:100%;
-        overflow:hidden;
+            <h1 id="lesson">lesson</h1>
+<h2 id="animation动画">animation动画</h2>
+<pre><code>添加动画： 
+@keyframes 动画名{
+    from {
+        动作
     }
+    to{
+        动作
+    }
+}
+或者
+@keyframes 动画名{
+    0%{
+        动作
+    }
+    .
+    .
+    .
+    100%{
+        动画
+    }
+}
 </code></pre>
+<p>动画过渡效果设置：<br>
+复合属性：</p>
+<pre><code>animation: name duration delay timing-function iterating-count direction fill-mode
+</code></pre>
+<p>动画播放状态:<code>animation-paly-state</code></p>
+<p>练习：轮播图，设置展示窗口，容器加载图片，动画呈现换页的效果。</p>
+<h2 id="响应式布局">响应式布局</h2>
+<p>适应不同设备屏幕。<br>
+语法：</p>
+<pre><code>&lt;link type=&quot;stylesheet&quot; href=&quot;&quot; media=&quot;设备类型名（screen、TV等等）&quot;&gt;
+style{
+   @media 媒体类型 and/ , /only/not（描述媒体的特点）{
+        选择器{
+            样式
+        }
+    } 
+}
+</code></pre>
+<h1 id="作业">作业：</h1>
+<p>JQ22实战。通过搭配弹性盒子、响应式布局设置，缩窄屏幕，呈现不同尺寸屏幕下的效果效果。</p>
+<ol>
+<li>hover效果的实现:
+<ul>
+<li>通过缩小nav的宽高，适应button的大小，呈现hover button 出现下拉二级列表。</li>
+</ul>
+</li>
+<li>弹性盒子，高度自适应。</li>
+<li>隐藏、展现效果的实现。</li>
+</ol>
 
           </div>
         </div>
 
         
           <div class="next-post">
-            <a class="purple-link" href="https://hsuchiaping.github.io/post/css-ji-chu-jing-xiang-jian-bian/">
+            <a class="purple-link" href="https://hsuchiaping.github.io/post/330-zuo-ye/">
               <h3 class="post-title">
-                下一篇：CSS基础——径向渐变
+                下一篇：330作业
               </h3>
             </a>
           </div>
