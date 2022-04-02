@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://hsuchiaping.github.io/</id>
     <title>Gridea</title>
-    <updated>2022-04-02T01:47:12.611Z</updated>
+    <updated>2022-04-02T05:15:55.097Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://hsuchiaping.github.io/"/>
     <link rel="self" href="https://hsuchiaping.github.io/atom.xml"/>
@@ -10,6 +10,31 @@
     <logo>https://hsuchiaping.github.io/images/avatar.png</logo>
     <icon>https://hsuchiaping.github.io/favicon.ico</icon>
     <rights>All rights reserved 2022, Gridea</rights>
+    <entry>
+        <title type="html"><![CDATA[Font]]></title>
+        <id>https://hsuchiaping.github.io/post/font/</id>
+        <link href="https://hsuchiaping.github.io/post/font/">
+        </link>
+        <updated>2022-04-02T05:14:06.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="font-family">font-family</h1>
+<p>tahoma</p>
+<h2 id="中文名unicode">中文名Unicode：</h2>
+<p>用 unicode 表示，不用 SimSun, 是因为 Firefox 的某些版本和 Opera 不支持 SimSun 的写法。注释乱码：强烈建议不要用中文注释。</p>
+<pre><code>新细明体 \65B0\7EC6\660E\4F53
+细明体 \7EC6\660E\4F53
+标楷体 \6807\6977\4F53
+黑体 \9ED1\4F53
+宋体 \5B8B\4F53
+新宋体 \65B0\5B8B\4F53
+仿宋 \4EFF\5B8B
+楷体 \6977\4F53
+仿宋_GB2312 \4EFF\5B8B_GB2312
+楷体_GB2312 \6977\4F53_GB2312
+微软正黑体 \5FAE\x8F6F\6B63\9ED1\4F53
+微软雅黑 \5FAE\8F6F\96C5\9ED1
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[401-lesson&作业]]></title>
         <id>https://hsuchiaping.github.io/post/401-lessonandzuo-ye/</id>
@@ -69,7 +94,14 @@ style{
 <li>弹性盒子，高度自适应。</li>
 <li>隐藏、展现效果的实现。</li>
 <li>过渡不能作用于display</li>
-<li>块级元素垂直居中：vertical-align：middle</li>
+<li>行级元素垂直居中：<code>vertical-align：middle</code>。display属性为：<code>inline</code>、<code>inline-block</code>、<code>inline-table</code>、<code>table-cell</code>。<br>
+vertical-align:middle(元素的中垂点与父元素的基线加1/2父元素中字母X的高度对齐)</li>
+<li>弹性盒布局属性
+<ul>
+<li>弹性盒子使用不同的布局方法，某些属性不能用在弹性盒子。</li>
+<li></li>
+</ul>
+</li>
 </ol>
 ]]></content>
     </entry>
@@ -276,58 +308,6 @@ bottom：底部对齐</p>
         <updated>2022-03-29T11:39:39.000Z</updated>
         <content type="html"><![CDATA[<h1 id="fc容器的概念">FC容器的概念：</h1>
 <p>FC（Formatting Context）即格式化上下文。是一块渲染区域，决定容器内的子元素如何排列，及元素之间的关系。常见的FC容器有BFC（Block Formatting Context）、IFC（Inline Formatting Context）。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[HTML5新特性——新增表单控件]]></title>
-        <id>https://hsuchiaping.github.io/post/html5-xin-te-xing-xin-zeng-biao-dan-kong-jian/</id>
-        <link href="https://hsuchiaping.github.io/post/html5-xin-te-xing-xin-zeng-biao-dan-kong-jian/">
-        </link>
-        <updated>2022-03-29T11:24:23.000Z</updated>
-        <content type="html"><![CDATA[<h1 id="新增表单控件">新增表单控件</h1>
-<ol>
-<li>
-<p>邮箱输入<br>
-<code>&lt;input type=&quot;email&quot;&gt;</code></p>
-</li>
-<li>
-<p>数字输入<br>
-<code>&lt;input type=&quot;number&quot;&gt;</code></p>
-</li>
-<li>
-<p>网址输入<br>
-<code>&lt;input type=&quot;url&quot;&gt;</code></p>
-</li>
-<li>
-<p>搜索输入<br>
-<code>&lt;input type=&quot;search&quot;&gt;</code></p>
-</li>
-<li>
-<p>选取范围<br>
-<code>&lt;inout type=&quot;range&quot;&gt;</code></p>
-</li>
-<li>
-<p>选择颜色<br>
-<code>&lt;input type=&quot;color&quot;&gt;</code></p>
-</li>
-<li>
-<p>时间控件<br>
-<code>&lt;input type=&quot;date/month/week...&quot;&gt;</code></p>
-</li>
-<li>
-<p>文件上传，multiple设置多选<br>
-<code>&lt;input type=&quot;file&quot; multiple&gt;</code></p>
-</li>
-<li>
-<p>选项列表，搜索时自动出现在搜索框下方</p>
-<pre><code>    &lt;input type=&quot;list&quot; list=&quot;mylist&quot;&gt;
-    &lt;listdata id=&quot;mylist&quot;&gt;
-        &lt;option value&gt;ABC&lt;/option&gt;
-        &lt;option value&gt;ABC&lt;/option&gt;
-        &lt;option value&gt;ABC&lt;/option&gt;
-</code></pre>
-</li>
-</ol>
 ]]></content>
     </entry>
 </feed>
