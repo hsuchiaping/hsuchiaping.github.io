@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://hsuchiaping.github.io/</id>
     <title>Gridea</title>
-    <updated>2022-04-02T05:15:55.097Z</updated>
+    <updated>2022-04-09T17:15:53.017Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://hsuchiaping.github.io/"/>
     <link rel="self" href="https://hsuchiaping.github.io/atom.xml"/>
@@ -10,6 +10,207 @@
     <logo>https://hsuchiaping.github.io/images/avatar.png</logo>
     <icon>https://hsuchiaping.github.io/favicon.ico</icon>
     <rights>All rights reserved 2022, Gridea</rights>
+    <entry>
+        <title type="html"><![CDATA[项目js代码]]></title>
+        <id>https://hsuchiaping.github.io/post/xiang-mu-js-dai-ma/</id>
+        <link href="https://hsuchiaping.github.io/post/xiang-mu-js-dai-ma/">
+        </link>
+        <updated>2022-04-09T17:14:25.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="购物车页面">购物车页面</h1>
+<pre><code>  &lt;!-- 轮播图 --&gt;
+    &lt;script&gt;
+        function l(obj) {
+            for (let i = 1; i &lt;= 4; i++) {
+                if (i == obj) {
+                    document.getElementById(&quot;btn&quot; + i).style.backgroundColor = &quot;white&quot;;
+                    document.getElementById(&quot;multi-image&quot;).style.left = String(-100 * (i - 1)) + '%'
+                } else {
+                    document.getElementById(&quot;btn&quot; + i).style.background = &quot;none&quot;;
+                }
+            }
+        }
+    &lt;/script&gt;
+    &lt;!-- 滚动时，显示回到顶部按钮。不滚动时不显示以及购物车底部结算栏滚动到一定位置，回到列表底部 --&gt;
+    &lt;script&gt;
+        window.onscroll = function () {
+            var sco = document.documentElement.scrollTop;
+            if (sco &gt; 200) {
+                document.getElementById('Aside4').style.display = 'list-item';
+
+            } else {
+                document.getElementById('Aside4').style.display = 'none';
+            };
+            // 设置表格父盒子的下padding为了tfoot在fixed还没变为absolute时，footer的上边框不会显示到tfoot的空间。
+            if (sco &gt; 265) {
+                document.getElementById('cartList').style.paddingBottom = 0 + &quot;px&quot;;
+                document.getElementById('tf1').style.position = &quot;relative&quot;;
+            } else {
+                document.getElementById('tf1').style.position = &quot;fixed&quot;;
+                document.getElementById('cartList').style.paddingBottom = 42 + &quot;px&quot;;
+            }
+        }
+    &lt;/script&gt;
+    &lt;!-- 滚动回到顶部,平滑滚动 --&gt;
+    &lt;script&gt;
+        function BackToTopFunction() {
+            document.documentElement.scrollTo({left:0,top:0,behavior:&quot;smooth&quot;});
+        }
+    &lt;/script&gt;
+    &lt;!-- 模拟下拉选项 --&gt;
+    &lt;script&gt;
+        // function queueFunction(obj){
+        //     if (obj == 1) {
+        //         document.getElementById('Queue').style.height = 'fit-content';
+        //     } else {
+        //         document.getElementById('Queue').style.height = '0px';
+        //     }
+        // };
+        var i = 1;
+
+        function queueFunction() {
+            var x = i % 2;
+            if (x == 0) {
+                document.getElementById('Queue').style.height = '0px';
+            } else {
+                document.getElementById('Queue').style.height = 'fit-content';
+            }
+            i++;
+        }
+
+        // 点击选择，显示文字
+        function resetFunction() {
+            document.getElementById('QueueInput').value = '排序方式'
+        }
+
+        function lowFunction() {
+            document.getElementById('QueueInput').value = '价格从低到高'
+        }
+
+        function highFunction() {
+            document.getElementById('QueueInput').value = '价格从高到低'
+        }
+    &lt;/script&gt;
+    &lt;!-- 商品页面分页 --&gt;
+    &lt;script&gt;
+        function proFunction(obj) {
+            for (let i = 1; i &lt;= 2; i++) {
+                if (i == obj) {
+                    document.getElementById('DetailPage' + i).style.display = &quot;block&quot;;
+                } else {
+                    document.getElementById('DetailPage' + i).style.display = &quot;none&quot;;
+                }
+
+            }
+        }
+    &lt;/script&gt;
+    &lt;!-- 购物车流程 --&gt;
+    &lt;script&gt;
+        function cartFunction(obj) {
+            for (let i = 1; i &lt;= 3; i++) {
+                if (i == obj) {
+                    document.getElementById('cart' + i).style.borderColor = '#a10000';
+                    document.getElementById('cart' + i + i).style.backgroundColor = '#a10000';
+                    document.getElementById('cartSpan' + i).style.color = '#a10000';
+
+                } else {
+                    document.getElementById('cart' + i).style.borderColor = '#cfcfcf';
+                    document.getElementById('cart' + i + i).style.backgroundColor = '#fff';
+                    document.getElementById('cartSpan' + i).style.color = '#cfcfcf';
+                }
+
+            }
+
+        }
+    &lt;/script&gt;
+    &lt;!-- 二维码模态框 --&gt;
+    &lt;script&gt;
+        // 模态框出现
+        function QRFunction() {
+            document.getElementById('ModalCover').style.display = &quot;block&quot;;
+            document.getElementById('QrCode').style.display = &quot;block&quot;;
+        }
+        // 点击页面模态框消失
+        function closeFunction() {
+            document.getElementById('ModalCover').style.display = &quot;none&quot;;
+            document.getElementById('QrCode').style.display = &quot;none&quot;;
+        }
+        // window.onclick = function () {
+        //     document.getElementById('ModalCover').style.display = &quot;none&quot;;
+        //     document.getElementById('QrCode').style.display = &quot;none&quot;;
+        // };
+    &lt;/script&gt;
+    &lt;!-- 购物车，底部结算栏，滚动到261位置消失 --&gt;
+    &lt;!-- &lt;script&gt;
+            var tfScr = document.documentElement.scrollTop;
+            if(tfScr &gt; 261){
+                document.getElementById('tf2').style.display = &quot;none&quot;;
+            }
+        &lt;/script&gt; --&gt;
+    &lt;!-- 购物车删除弹窗 --&gt;
+    &lt;script&gt;
+        function disappearFunction() {
+            document.getElementById(&quot;cartAlert&quot;).style.display = &quot;block&quot;;
+        };
+        function yesFunction(){
+            document.getElementById(&quot;disappearTr&quot;).style.display = &quot;none&quot;;
+            document.getElementById(&quot;cartAlert&quot;).style.display = &quot;none&quot;;
+        };
+        function noFunction(){
+            document.getElementById(&quot;cartAlert&quot;).style.display = &quot;none&quot;;
+        };
+    &lt;/script&gt;
+    &lt;!-- 购物车数量加减及金额变化 --&gt;
+    &lt;!-- num.toFixed(2) 保留两位小数 --&gt;
+    &lt;script&gt;
+        // 循环，使小计金额 =  单价 * 数量
+        for(i = 1;i &lt;= 6;i++){
+            var q = Number(document.getElementById(&quot;quantity&quot;+i).textContent);
+            document.getElementById(&quot;amount&quot;+i).innerHTML = &quot;&amp;yen;&quot; + Number(20 * q).toFixed(2);
+        }
+        // 设置点击事件函数，obj是number
+        function minusFunction(obj){
+            var q = Number(document.getElementById(&quot;quantity&quot;+ obj).textContent);
+            var a = Number(document.getElementById(&quot;amount&quot;+ obj).textContent);
+            if (q &gt; 0) {
+                document.getElementById(&quot;quantity&quot; + obj).innerHTML = q - 1;
+                document.getElementById(&quot;amount&quot; + obj).innerHTML = &quot;&amp;yen;&quot; + Number(20 * (q - 1)).toFixed(2);
+            } else {
+                return (false);
+            }
+        };
+        // 加法
+        function addFunction(obj) {
+            var q = Number(document.getElementById(&quot;quantity&quot;+ obj).textContent);
+            var a = Number(document.getElementById(&quot;amount&quot; + obj).textContent);
+            document.getElementById(&quot;quantity&quot; + obj).innerHTML = q + 1;
+            document.getElementById(&quot;amount&quot; + obj).innerHTML = &quot;&amp;yen;&quot; + Number(20 * (q + 1)).toFixed(2);
+        };
+        // 金额与数量对应
+        // document.getElementById(&quot;amount&quot;).innerHTML = &quot;&amp;yen;&quot; + Number(20 * q).toFixed(2);
+        // // 减法
+        // function minusFunction() {
+        //     var q = Number(document.getElementById(&quot;quantity&quot;).textContent);
+        //     var a = Number(document.getElementById(&quot;amount&quot;).textContent);
+        //     if (q &gt; 0) {
+        //         document.getElementById(&quot;quantity&quot;).innerHTML = q - 1;
+        //         document.getElementById(&quot;amount&quot;).innerHTML = &quot;&amp;yen;&quot; + Number(20 * (q - 1)).toFixed(2);
+        //     } else {
+        //         return (false);
+        //     }
+        // };
+        // // 加法
+        // function addFunction() {
+        //     var q = Number(document.getElementById(&quot;quantity&quot;).textContent);
+        //     var a = Number(document.getElementById(&quot;amount&quot;).textContent);
+        //     document.getElementById(&quot;quantity&quot;).innerHTML = q + 1;
+        //     document.getElementById(&quot;amount&quot;).innerHTML = &quot;&amp;yen;&quot; + Number(20 * (q + 1)).toFixed(2);
+        // };
+    &lt;/script&gt;
+
+    &lt;!-- 购物车选择框 --&gt;
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Font]]></title>
         <id>https://hsuchiaping.github.io/post/font/</id>
@@ -298,16 +499,6 @@ bottom：底部对齐</p>
 <li>display为inline-block、table-cell、table-caption、flex；</li>
 <li>overflow不为visible；</li>
 </ol>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[FC容器——概念]]></title>
-        <id>https://hsuchiaping.github.io/post/fc-rong-qi-gai-nian/</id>
-        <link href="https://hsuchiaping.github.io/post/fc-rong-qi-gai-nian/">
-        </link>
-        <updated>2022-03-29T11:39:39.000Z</updated>
-        <content type="html"><![CDATA[<h1 id="fc容器的概念">FC容器的概念：</h1>
-<p>FC（Formatting Context）即格式化上下文。是一块渲染区域，决定容器内的子元素如何排列，及元素之间的关系。常见的FC容器有BFC（Block Formatting Context）、IFC（Inline Formatting Context）。</p>
 ]]></content>
     </entry>
 </feed>

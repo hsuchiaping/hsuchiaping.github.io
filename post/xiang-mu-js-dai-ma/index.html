@@ -1,0 +1,336 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    
+<meta charset="utf-8" >
+
+<title>项目js代码 | Gridea</title>
+<meta name="description" content="温故而知新">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://hsuchiaping.github.io//favicon.ico?v=1649524529790">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://hsuchiaping.github.io//styles/main.css">
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+  </head>
+  <body>
+    <div id="app" class="main">
+      <div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://hsuchiaping.github.io/">
+        <img class="avatar" src="https://hsuchiaping.github.io//images/avatar.png?v=1649524529790" alt="" width="32px" height="32px">
+      </a>
+      <a href="https://hsuchiaping.github.io/">
+        <h1 class="site-title">Gridea</h1>
+      </a>
+    </div>
+    <div class="right">
+      <transition name="fade">
+        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
+      </transition>
+    </div>
+  </div>
+</div>
+
+<transition name="fade">
+  <div class="menu-container" style="display: none;" v-show="menuVisible">
+    <div class="menu-list">
+      
+        
+          <a href="/" class="menu purple-link">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="menu purple-link">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="menu purple-link">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="menu purple-link">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+</transition>
+
+
+      <div class="content-container">
+        <div class="post-detail">
+          
+          <h2 class="post-title">项目js代码</h2>
+          <div class="post-info post-detail-info">
+            <span><i class="icon-calendar-outline"></i> 2022-04-10</span>
+            
+          </div>
+          <div class="post-content">
+            <h1 id="购物车页面">购物车页面</h1>
+<pre><code>  &lt;!-- 轮播图 --&gt;
+    &lt;script&gt;
+        function l(obj) {
+            for (let i = 1; i &lt;= 4; i++) {
+                if (i == obj) {
+                    document.getElementById(&quot;btn&quot; + i).style.backgroundColor = &quot;white&quot;;
+                    document.getElementById(&quot;multi-image&quot;).style.left = String(-100 * (i - 1)) + '%'
+                } else {
+                    document.getElementById(&quot;btn&quot; + i).style.background = &quot;none&quot;;
+                }
+            }
+        }
+    &lt;/script&gt;
+    &lt;!-- 滚动时，显示回到顶部按钮。不滚动时不显示以及购物车底部结算栏滚动到一定位置，回到列表底部 --&gt;
+    &lt;script&gt;
+        window.onscroll = function () {
+            var sco = document.documentElement.scrollTop;
+            if (sco &gt; 200) {
+                document.getElementById('Aside4').style.display = 'list-item';
+
+            } else {
+                document.getElementById('Aside4').style.display = 'none';
+            };
+            // 设置表格父盒子的下padding为了tfoot在fixed还没变为absolute时，footer的上边框不会显示到tfoot的空间。
+            if (sco &gt; 265) {
+                document.getElementById('cartList').style.paddingBottom = 0 + &quot;px&quot;;
+                document.getElementById('tf1').style.position = &quot;relative&quot;;
+            } else {
+                document.getElementById('tf1').style.position = &quot;fixed&quot;;
+                document.getElementById('cartList').style.paddingBottom = 42 + &quot;px&quot;;
+            }
+        }
+    &lt;/script&gt;
+    &lt;!-- 滚动回到顶部,平滑滚动 --&gt;
+    &lt;script&gt;
+        function BackToTopFunction() {
+            document.documentElement.scrollTo({left:0,top:0,behavior:&quot;smooth&quot;});
+        }
+    &lt;/script&gt;
+    &lt;!-- 模拟下拉选项 --&gt;
+    &lt;script&gt;
+        // function queueFunction(obj){
+        //     if (obj == 1) {
+        //         document.getElementById('Queue').style.height = 'fit-content';
+        //     } else {
+        //         document.getElementById('Queue').style.height = '0px';
+        //     }
+        // };
+        var i = 1;
+
+        function queueFunction() {
+            var x = i % 2;
+            if (x == 0) {
+                document.getElementById('Queue').style.height = '0px';
+            } else {
+                document.getElementById('Queue').style.height = 'fit-content';
+            }
+            i++;
+        }
+
+        // 点击选择，显示文字
+        function resetFunction() {
+            document.getElementById('QueueInput').value = '排序方式'
+        }
+
+        function lowFunction() {
+            document.getElementById('QueueInput').value = '价格从低到高'
+        }
+
+        function highFunction() {
+            document.getElementById('QueueInput').value = '价格从高到低'
+        }
+    &lt;/script&gt;
+    &lt;!-- 商品页面分页 --&gt;
+    &lt;script&gt;
+        function proFunction(obj) {
+            for (let i = 1; i &lt;= 2; i++) {
+                if (i == obj) {
+                    document.getElementById('DetailPage' + i).style.display = &quot;block&quot;;
+                } else {
+                    document.getElementById('DetailPage' + i).style.display = &quot;none&quot;;
+                }
+
+            }
+        }
+    &lt;/script&gt;
+    &lt;!-- 购物车流程 --&gt;
+    &lt;script&gt;
+        function cartFunction(obj) {
+            for (let i = 1; i &lt;= 3; i++) {
+                if (i == obj) {
+                    document.getElementById('cart' + i).style.borderColor = '#a10000';
+                    document.getElementById('cart' + i + i).style.backgroundColor = '#a10000';
+                    document.getElementById('cartSpan' + i).style.color = '#a10000';
+
+                } else {
+                    document.getElementById('cart' + i).style.borderColor = '#cfcfcf';
+                    document.getElementById('cart' + i + i).style.backgroundColor = '#fff';
+                    document.getElementById('cartSpan' + i).style.color = '#cfcfcf';
+                }
+
+            }
+
+        }
+    &lt;/script&gt;
+    &lt;!-- 二维码模态框 --&gt;
+    &lt;script&gt;
+        // 模态框出现
+        function QRFunction() {
+            document.getElementById('ModalCover').style.display = &quot;block&quot;;
+            document.getElementById('QrCode').style.display = &quot;block&quot;;
+        }
+        // 点击页面模态框消失
+        function closeFunction() {
+            document.getElementById('ModalCover').style.display = &quot;none&quot;;
+            document.getElementById('QrCode').style.display = &quot;none&quot;;
+        }
+        // window.onclick = function () {
+        //     document.getElementById('ModalCover').style.display = &quot;none&quot;;
+        //     document.getElementById('QrCode').style.display = &quot;none&quot;;
+        // };
+    &lt;/script&gt;
+    &lt;!-- 购物车，底部结算栏，滚动到261位置消失 --&gt;
+    &lt;!-- &lt;script&gt;
+            var tfScr = document.documentElement.scrollTop;
+            if(tfScr &gt; 261){
+                document.getElementById('tf2').style.display = &quot;none&quot;;
+            }
+        &lt;/script&gt; --&gt;
+    &lt;!-- 购物车删除弹窗 --&gt;
+    &lt;script&gt;
+        function disappearFunction() {
+            document.getElementById(&quot;cartAlert&quot;).style.display = &quot;block&quot;;
+        };
+        function yesFunction(){
+            document.getElementById(&quot;disappearTr&quot;).style.display = &quot;none&quot;;
+            document.getElementById(&quot;cartAlert&quot;).style.display = &quot;none&quot;;
+        };
+        function noFunction(){
+            document.getElementById(&quot;cartAlert&quot;).style.display = &quot;none&quot;;
+        };
+    &lt;/script&gt;
+    &lt;!-- 购物车数量加减及金额变化 --&gt;
+    &lt;!-- num.toFixed(2) 保留两位小数 --&gt;
+    &lt;script&gt;
+        // 循环，使小计金额 =  单价 * 数量
+        for(i = 1;i &lt;= 6;i++){
+            var q = Number(document.getElementById(&quot;quantity&quot;+i).textContent);
+            document.getElementById(&quot;amount&quot;+i).innerHTML = &quot;&amp;yen;&quot; + Number(20 * q).toFixed(2);
+        }
+        // 设置点击事件函数，obj是number
+        function minusFunction(obj){
+            var q = Number(document.getElementById(&quot;quantity&quot;+ obj).textContent);
+            var a = Number(document.getElementById(&quot;amount&quot;+ obj).textContent);
+            if (q &gt; 0) {
+                document.getElementById(&quot;quantity&quot; + obj).innerHTML = q - 1;
+                document.getElementById(&quot;amount&quot; + obj).innerHTML = &quot;&amp;yen;&quot; + Number(20 * (q - 1)).toFixed(2);
+            } else {
+                return (false);
+            }
+        };
+        // 加法
+        function addFunction(obj) {
+            var q = Number(document.getElementById(&quot;quantity&quot;+ obj).textContent);
+            var a = Number(document.getElementById(&quot;amount&quot; + obj).textContent);
+            document.getElementById(&quot;quantity&quot; + obj).innerHTML = q + 1;
+            document.getElementById(&quot;amount&quot; + obj).innerHTML = &quot;&amp;yen;&quot; + Number(20 * (q + 1)).toFixed(2);
+        };
+        // 金额与数量对应
+        // document.getElementById(&quot;amount&quot;).innerHTML = &quot;&amp;yen;&quot; + Number(20 * q).toFixed(2);
+        // // 减法
+        // function minusFunction() {
+        //     var q = Number(document.getElementById(&quot;quantity&quot;).textContent);
+        //     var a = Number(document.getElementById(&quot;amount&quot;).textContent);
+        //     if (q &gt; 0) {
+        //         document.getElementById(&quot;quantity&quot;).innerHTML = q - 1;
+        //         document.getElementById(&quot;amount&quot;).innerHTML = &quot;&amp;yen;&quot; + Number(20 * (q - 1)).toFixed(2);
+        //     } else {
+        //         return (false);
+        //     }
+        // };
+        // // 加法
+        // function addFunction() {
+        //     var q = Number(document.getElementById(&quot;quantity&quot;).textContent);
+        //     var a = Number(document.getElementById(&quot;amount&quot;).textContent);
+        //     document.getElementById(&quot;quantity&quot;).innerHTML = q + 1;
+        //     document.getElementById(&quot;amount&quot;).innerHTML = &quot;&amp;yen;&quot; + Number(20 * (q + 1)).toFixed(2);
+        // };
+    &lt;/script&gt;
+
+    &lt;!-- 购物车选择框 --&gt;
+</code></pre>
+
+          </div>
+        </div>
+
+        
+          <div class="next-post">
+            <a class="purple-link" href="https://hsuchiaping.github.io/post/font/">
+              <h3 class="post-title">
+                下一篇：Font
+              </h3>
+            </a>
+          </div>
+          
+      </div>
+
+      
+
+      <div class="site-footer">
+  <div class="slogan">温故而知新</div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://hsuchiaping.github.io//atom.xml" target="_blank">RSS</a>
+</div>
+
+
+    </div>
+    <script type="application/javascript">
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+  </body>
+</html>
