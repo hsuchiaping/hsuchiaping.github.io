@@ -1,0 +1,427 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    
+<meta charset="utf-8" >
+
+<title>JS第一天上课 | Gridea</title>
+<meta name="description" content="温故而知新">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://hsuchiaping.github.io//favicon.ico?v=1649857466178">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://hsuchiaping.github.io//styles/main.css">
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+  </head>
+  <body>
+    <div id="app" class="main">
+      <div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://hsuchiaping.github.io/">
+        <img class="avatar" src="https://hsuchiaping.github.io//images/avatar.png?v=1649857466178" alt="" width="32px" height="32px">
+      </a>
+      <a href="https://hsuchiaping.github.io/">
+        <h1 class="site-title">Gridea</h1>
+      </a>
+    </div>
+    <div class="right">
+      <transition name="fade">
+        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
+      </transition>
+    </div>
+  </div>
+</div>
+
+<transition name="fade">
+  <div class="menu-container" style="display: none;" v-show="menuVisible">
+    <div class="menu-list">
+      
+        
+          <a href="/" class="menu purple-link">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="menu purple-link">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="menu purple-link">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="menu purple-link">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+</transition>
+
+
+      <div class="content-container">
+        <div class="post-detail">
+          
+          <h2 class="post-title">JS第一天上课</h2>
+          <div class="post-info post-detail-info">
+            <span><i class="icon-calendar-outline"></i> 2022-04-13</span>
+            
+          </div>
+          <div class="post-content">
+            <h1 id="js概述">JS概述</h1>
+<h2 id="软件架构模式">软件架构模式</h2>
+<ol>
+<li>C/S （Client Server）客户端/服务器
+<ul>
+<li>用户需要下载客户端才能使用</li>
+<li>例子：QQ、微信、LOL</li>
+</ul>
+</li>
+<li>B/S （Browser Server）浏览器/服务器
+<ul>
+<li>使用浏览器就可以使用功能，所有程序放在服务器上</li>
+<li>例子：京东、淘宝、哔哩哔哩</li>
+</ul>
+</li>
+</ol>
+<h2 id="url">URL</h2>
+<h3 id="网址">网址</h3>
+<ul>
+<li>URL(Uniform Resource Locator) 统一资源定位符，用于定位互联网上的资源，确定要访问资源的位置</li>
+<li>格式：<code>协议://主机:编号/资源路径</code>，比如<code>https://www.jd.com/index.html</code>
+<ol>
+<li>协议：<code>http</code>或<code>https</code></li>
+<li>主机：<br>
+IP：4段数字组成，每段数字取值为0~255，例如<code>192.168.3.125</code>，定位网络上的计算机<br>
+域名：简化IP难以记忆的问题<br>
+端口号：一般隐藏状态，默认为80<code>http</code>或者433<code>https</code>;</li>
+</ol>
+</li>
+</ul>
+<h2 id="历史">历史</h2>
+<p>为了解决浏览器中对用户数据进行校验的问题以及实现动态网页效果的技术而产生。由网景公司开发，标准为：ECMAScript。</p>
+<h2 id="概述">概述</h2>
+<ol>
+<li>作用
+<ol>
+<li>实现用户数据校验与交换</li>
+<li>实现页面的动态效果</li>
+</ol>
+</li>
+<li>组成
+<ol>
+<li>ECMAScript 最核心、最基础的部分，所有浏览器都能执行。</li>
+<li>BOM(Browser Objctive Model) 浏览器对象模型，提供与浏览器交换的接口。</li>
+<li>DOM(Document Objctive Model) 文档对象模型，提供与网页文档交换的接口。</li>
+</ol>
+</li>
+<li>版本
+<ol>
+<li>ES5（主流）所有主流浏览器都支持，IE9支持部分，IE11 IE12完美支持。</li>
+<li>ES6（辅） 2015年后的浏览器支持，IE都不支持，EDGE支持。</li>
+</ol>
+</li>
+<li>运行环境
+<ol>
+<li>浏览器   所有浏览器脚本解释引擎默认为JavaScript。</li>
+<li>Node.Js 独立运行JS代码的服务器环境。</li>
+</ol>
+</li>
+</ol>
+<h1 id="如何在html中使用javascript">如何在HTML中使用JavaScript</h1>
+<ol>
+<li>内部<br>
+在<code>&lt;head&gt;&lt;/head&gt;</code>或者<code>&lt;body&gt;&lt;/body&gt;</code>标签中使用，<code>&lt;script&gt;JS代码&lt;/script&gt;</code><br>
+<code>&lt;head&gt; &lt;script&gt; JS代码 &lt;/script&gt; &lt;/head&gt; &lt;body&gt; &lt;script&gt; JS代码 &lt;/script&gt; &lt;/body&gt;</code></li>
+<li>外部文件<br>
+通过在<code>&lt;head&gt;&lt;/head&gt;</code>或者<code>&lt;body&gt;&lt;/body&gt;</code>标签中使用<code>&lt;script src=&quot;JS文件路径&quot;&gt;&lt;/script&gt;</code>引入写好的JS文件。</li>
+</ol>
+<h1 id="注意">注意</h1>
+<p>JS代码从上到下，从左到右执行，严格区分大小写、中英文，建议每条JS命令后加<code>;</code>分号作为结束标志。作为引入外部标签的<code>&lt;script&gt;</code>的里面再写JS代码不会执行。</p>
+<h1 id="注释">注释</h1>
+<p>进行注释说明的文字，不会被执行，提高代码可读性<br>
+单行注释：<code>Ctrl + /</code>；注释效果：<code>//单行注释</code><br>
+块注释：<code>Shift Alt + A</code> 注释效果:</p>
+<pre><code>     /*块
+        注
+        释*/
+</code></pre>
+<p>文档注释：<code>/**注释内容 */</code>，一般加在函数、类定义前。</p>
+<h1 id="输入与输出">输入与输出</h1>
+<ol>
+<li>输入<br>
+1. <code>prompt('提示内容')</code><br>
+2. 获取到的内容为字符串类型。</li>
+<li>输出<br>
+1. 页面输出  <code>document.write(输出内容)</code><br>
+2. 控制台输出 <code>console.log()</code><br>
+3. 弹框输出 <code>alert()</code></li>
+</ol>
+<h1 id="加号的作用">加号<code>+</code>的作用</h1>
+<ol>
+<li>当<code>+</code>链接的操作数有任一个为字符串类型时，该符号起到拼接的作用。</li>
+<li>当操作数都为数字时，则是数学运算<code>+</code>的作用。</li>
+</ol>
+<h1 id="变量">变量</h1>
+<p>概念：向系统申请一个储存空间，并命名，之后可以通过使用名字来使用储存空间</p>
+<ol>
+<li>语法<br>
+1. 不赋值   <code>var num1,num2</code><br>
+2. 赋值 <code>var num = 1, num2 = 2</code>或者<code>var num1 = prompt('请输入一个数字'), num2 = prompt('请输入第二个数字')</code></li>
+<li>取值<br>
+1. 将变量里的值写出来<br>
+<code>document.write(`两数相加结果为：${num1 + num2}, 两数相乘结果为：${num1 * num2}, 两数相除的结果为：${num1 / num2}`);</code></li>
+</ol>
+<h1 id="标识符">标识符</h1>
+<h2 id="所有命名都要遵循标识符规则">所有命名都要遵循标识符规则：</h2>
+<ol>
+<li>只能由数字、字母、下划线<code>_</code>、美元符号<code>$</code>组成，不能使用其他的符号、中文等等，如<code>demo*</code></li>
+<li>不能以数字开头，如<code>2demo</code></li>
+<li>不能与关键字冲突，如<code>var</code></li>
+</ol>
+<h2 id="驼峰命名法">驼峰命名法</h2>
+<ol>
+<li>大驼峰，有多个单词组成的命名，每个单词的首字母大写，其他小写
+<ol>
+<li>语法 <code>DaTuoFeng</code></li>
+<li>类名使用大驼峰</li>
+</ol>
+</li>
+<li>小驼峰，多个单词的命名，第一个单词全小写，后面的所有单词首字母大写
+<ol>
+<li>语法 <code>xiaoTuoFeng</code></li>
+<li>变量名、函数名使用小驼峰</li>
+</ol>
+</li>
+<li>作用：见名知意</li>
+</ol>
+<h1 id="数据类型">数据类型</h1>
+<ol>
+<li>基本数据类型
+<ol>
+<li>Number   数字类型
+<ol>
+<li>整数 <code>var num = 222</code></li>
+<li>小数 <code>var num = 22.22</code></li>
+<li>NaN Not a Number，<code>Number(字符串和数字)</code>会变成NaN</li>
+</ol>
+</li>
+<li>BOOlean  布尔值
+<ol>
+<li>ture <code>var Student = true</code></li>
+<li>false</li>
+</ol>
+</li>
+<li>String   字符串
+<ol>
+<li>使用单引号、双引号包着的一串字符</li>
+<li>字符模板：使用反单引号和美元<code>${}</code>符号，实现字符串中间填充字符串内容</li>
+</ol>
+</li>
+</ol>
+<pre><code>        var str1 = &quot;Hello&quot;
+        var str2 = &quot;Wolrd&quot;
+        var str3 = `${str1} World`
+</code></pre>
+<ol start="4">
+<li>undefined    未定义，一个特殊值，当变量未赋值时，直接使用该变量，就是undefined，是变量的默认值   <code>var demo</code>  或者    <code>var demo = undefined</code></li>
+<li>null 空值，对象为空，一个特殊值，表示对象为空。  <code>var demo = null</code>;</li>
+<li>Symbol()     唯一值，一般用于身份ID这些唯一的数据 ，不同变量名赋值为Symbol()，不会相同</li>
+</ol>
+<pre><code> var a = Symbol();
+ var b = Symbol();
+ a == b;
+ // false
+</code></pre>
+</li>
+<li>复合数据类型（引用数据类型）<br>
+Objctive<br>
+数组：Array [1, 2, 3, 4, 5]</li>
+</ol>
+<pre><code>var boy1 = {
+    id: Symbol(),
+    name: 'Alan',
+    age: 22,
+    gender: 'male'
+}
+</code></pre>
+<h1 id="typeof-的用法"><code>typeof</code> 的用法</h1>
+<p>获取数据的类型<br>
+语法：<code>typeof 数据</code></p>
+<pre><code>var demo = 1;
+typeof demo;
+//number
+</code></pre>
+<h1 id="数据转换">数据转换</h1>
+<h2 id="number与string之间的转换">number与string之间的转换</h2>
+<ol>
+<li>number转string
+<ol>
+<li>使用<code>+</code>做字符连接，给数字用&quot;+&quot;连接一个字符串，就可以实现转换</li>
+</ol>
+</li>
+</ol>
+<pre><code>var num = 1;
+var str = num + &quot;&quot;;
+typeof str;
+//string
+</code></pre>
+<pre><code>2. `目标数据.toString()`
+</code></pre>
+<pre><code>var num = 1;
+var str = num.toString();
+typeof str;
+//string
+</code></pre>
+<pre><code>3. `目标数据.tiFixed(小数位数)`，主要针对有小数的数字，有小数位数的字符串
+</code></pre>
+<pre><code>var num = 1;
+var str = num.toFixed(2);
+console.log(str)
+//1.00
+typeof str;
+//string
+</code></pre>
+<ol start="2">
+<li>string 转 number
+<ol>
+<li>字符串转为小数或者整数，按照数据的字面值进行转换，如果数据不是数字类型，则输出结果为NaN<br>
+<code>Number(目标字符串)</code></li>
+</ol>
+</li>
+</ol>
+<pre><code>var str = '123.123';
+var num = Number(str);
+console.log(num);
+//123.123
+typeof num;
+//number
+</code></pre>
+<pre><code>2. 字符串转整数
+</code></pre>
+<p><code>parseInt(目标字符串)</code><br>
+如果，字符串不是数字或者正负号开头，则输出为NaN<br>
+反之，以数字或者正负号开头的，从左到右，直到第一个非数字的字符或者直到字符串末尾，将匹配的部分转为整数。舍去小数部分。主要用于有小数的字符串转为整数。</p>
+<pre><code>var str = &quot;123a&quot;;
+var num = parseInt(str);
+console.log(num);
+//123
+typeof num;
+//number
+var str = &quot;a123&quot;;
+var num = parseInt(str);
+console.log(num);
+//NaN
+typeof num;
+//number
+</code></pre>
+<pre><code>3. 字符串转含有小数，浮点型
+</code></pre>
+<p><code>parseFloat(目标字符串);</code><br>
+如果目标字符串不是以数字、正负号、小数点开头的，输出结果为NaN；<br>
+反之，以数字、正负号、小数点开头的，从左到右，直到第一个非数字、第二个小数点、字符串末尾，将其前面部分转为小数</p>
+<pre><code>//情况1：数字，两个小数点
+var str = '123.123.123';
+var num = prseFloat(str);
+console.log(num);
+//123.123
+typeof num;
+//number
+
+//情况2：数字 小数点 非数字
+var str = '123.12asdasdasd';
+var num = prseFloat(str);
+console.log(num);
+//123.12
+typeof num;
+//number
+
+//情况3：负号，小数点，数字 字母
+var str = '-.12.66asdasdasd';
+var num = prseFloat(str);
+console.log(num);
+//-0.12
+typeof num;
+//number
+
+//情况4：小数点 数字 字母
+var str = '.12asdasdasd';
+var num = prseFloat(str);
+console.log(num);
+//0.12
+typeof num;
+//number
+</code></pre>
+
+          </div>
+        </div>
+
+        
+          <div class="next-post">
+            <a class="purple-link" href="https://hsuchiaping.github.io/post/js-lian-xi-ti-1/">
+              <h3 class="post-title">
+                下一篇：JS练习题（1）
+              </h3>
+            </a>
+          </div>
+          
+      </div>
+
+      
+
+      <div class="site-footer">
+  <div class="slogan">温故而知新</div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://hsuchiaping.github.io//atom.xml" target="_blank">RSS</a>
+</div>
+
+
+    </div>
+    <script type="application/javascript">
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+  </body>
+</html>
