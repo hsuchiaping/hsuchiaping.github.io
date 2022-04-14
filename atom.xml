@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://hsuchiaping.github.io/</id>
     <title>Gridea</title>
-    <updated>2022-04-14T14:05:14.465Z</updated>
+    <updated>2022-04-14T14:31:24.212Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://hsuchiaping.github.io/"/>
     <link rel="self" href="https://hsuchiaping.github.io/atom.xml"/>
@@ -330,6 +330,18 @@ console.log(num);
     console.log(age &gt; 18?&quot;成年&quot;:&quot;未成年&quot;);
     //当age大于18则显示成年，否则显示未成年。
 </code></pre>
+<h1 id="分支结构">分支结构</h1>
+<p>##if 语句</p>
+<h3 id="if-if-else-if-if-else">if 、if else if 、if else</h3>
+<pre><code>if(条件1){
+    执行的代码1;
+}else if(条件2){
+    执行的代码2;
+}else{
+    执行除了条件1和条件2外的所有情况的代码
+}
+</code></pre>
+<p><code>if</code>可以嵌套。</p>
 ]]></content>
     </entry>
     <entry>
