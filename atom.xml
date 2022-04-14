@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://hsuchiaping.github.io/</id>
     <title>Gridea</title>
-    <updated>2022-04-13T13:47:29.097Z</updated>
+    <updated>2022-04-14T08:29:47.874Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://hsuchiaping.github.io/"/>
     <link rel="self" href="https://hsuchiaping.github.io/atom.xml"/>
@@ -10,6 +10,15 @@
     <logo>https://hsuchiaping.github.io/images/avatar.png</logo>
     <icon>https://hsuchiaping.github.io/favicon.ico</icon>
     <rights>All rights reserved 2022, Gridea</rights>
+    <entry>
+        <title type="html"><![CDATA[JS第二天]]></title>
+        <id>https://hsuchiaping.github.io/post/js-di-er-tian/</id>
+        <link href="https://hsuchiaping.github.io/post/js-di-er-tian/">
+        </link>
+        <updated>2022-04-14T08:29:06.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="运算符">运算符</h1>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[JS第一天上课]]></title>
         <id>https://hsuchiaping.github.io/post/js-di-yi-tian-shang-ke/</id>
@@ -207,22 +216,22 @@ typeof demo;
 <ol>
 <li>使用<code>+</code>做字符连接，给数字用&quot;+&quot;连接一个字符串，就可以实现转换</li>
 </ol>
-</li>
-</ol>
 <pre><code>var num = 1;
 var str = num + &quot;&quot;;
 typeof str;
 //string
 </code></pre>
-<pre><code>2. `目标数据.toString()`
-</code></pre>
+<ol start="2">
+<li><code>目标数据.toString()</code></li>
+</ol>
 <pre><code>var num = 1;
 var str = num.toString();
 typeof str;
 //string
 </code></pre>
-<pre><code>3. `目标数据.tiFixed(小数位数)`，主要针对有小数的数字，有小数位数的字符串
-</code></pre>
+<ol start="3">
+<li><code>目标数据.tiFixed(小数位数)</code>，主要针对有小数的数字，有小数位数的字符串</li>
+</ol>
 <pre><code>var num = 1;
 var str = num.toFixed(2);
 console.log(str)
@@ -230,13 +239,11 @@ console.log(str)
 typeof str;
 //string
 </code></pre>
-<ol start="2">
+</li>
 <li>string 转 number
 <ol>
 <li>字符串转为小数或者整数，按照数据的字面值进行转换，如果数据不是数字类型，则输出结果为NaN<br>
 <code>Number(目标字符串)</code></li>
-</ol>
-</li>
 </ol>
 <pre><code>var str = '123.123';
 var num = Number(str);
@@ -245,11 +252,12 @@ console.log(num);
 typeof num;
 //number
 </code></pre>
-<pre><code>2. 字符串转整数
-</code></pre>
-<p><code>parseInt(目标字符串)</code><br>
+<ol start="2">
+<li>字符串转整数<br>
+<code>parseInt(目标字符串)</code><br>
 如果，字符串不是数字或者正负号开头，则输出为NaN<br>
-反之，以数字或者正负号开头的，从左到右，直到第一个非数字的字符或者直到字符串末尾，将匹配的部分转为整数。舍去小数部分。主要用于有小数的字符串转为整数。</p>
+反之，以数字或者正负号开头的，从左到右，直到第一个非数字的字符或者直到字符串末尾，将匹配的部分转为整数。舍去小数部分。主要用于有小数的字符串转为整数。</li>
+</ol>
 <pre><code>var str = &quot;123a&quot;;
 var num = parseInt(str);
 console.log(num);
@@ -263,11 +271,12 @@ console.log(num);
 typeof num;
 //number
 </code></pre>
-<pre><code>3. 字符串转含有小数，浮点型
-</code></pre>
-<p><code>parseFloat(目标字符串);</code><br>
+<ol start="3">
+<li>字符串转含有小数，浮点型<br>
+<code>parseFloat(目标字符串);</code><br>
 如果目标字符串不是以数字、正负号、小数点开头的，输出结果为NaN；<br>
-反之，以数字、正负号、小数点开头的，从左到右，直到第一个非数字、第二个小数点、字符串末尾，将其前面部分转为小数</p>
+反之，以数字、正负号、小数点开头的，从左到右，直到第一个非数字、第二个小数点、字符串末尾，将其前面部分转为小数</li>
+</ol>
 <pre><code>//情况1：数字，两个小数点
 var str = '123.123.123';
 var num = prseFloat(str);
@@ -300,6 +309,8 @@ console.log(num);
 typeof num;
 //number
 </code></pre>
+</li>
+</ol>
 ]]></content>
     </entry>
     <entry>
@@ -829,34 +840,6 @@ top顶线、middle中线、baseline基线、bottom底线</p>
 <p>top：顶部对齐<br>
 middle：居中<br>
 bottom：底部对齐</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[FC容器——IFC]]></title>
-        <id>https://hsuchiaping.github.io/post/fc-rong-qi-ifc/</id>
-        <link href="https://hsuchiaping.github.io/post/fc-rong-qi-ifc/">
-        </link>
-        <updated>2022-03-29T13:02:20.000Z</updated>
-        <content type="html"><![CDATA[<h1 id="ifc">IFC</h1>
-<h2 id="概念">概念：</h2>
-<p>Inline Formatting Context 行内格式化上下文 （行盒），是一行渲染区域规则，规定一行内元素如何排列。</p>
-<h2 id="特点">特点：</h2>
-<ol>
-<li>在IFC中，盒子水平放置的，排列一个接一个，从包含块的边界开始；</li>
-<li>在IFC中，盒子水平方向的margin、padding是有效的；</li>
-<li>这些盒子有多种对齐方式，底部、基线、中线等等；</li>
-<li>IFC负责的矩形区域称为行盒，整个一行的显示区域。</li>
-<li>行盒宽度由一行内所有的内容决定；</li>
-<li>高度由元素最高点到最低点决定。</li>
-</ol>
-<h2 id="影响ifc的css属性">影响IFC的css属性</h2>
-<ol>
-<li>font-size</li>
-<li>font-family</li>
-<li>height</li>
-<li>line-height</li>
-<li>vertica-align：设置行级元素在垂直方向上的对齐方式</li>
-</ol>
 ]]></content>
     </entry>
 </feed>
