@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://hsuchiaping.github.io//favicon.ico?v=1649924983716">
+<link rel="shortcut icon" href="https://hsuchiaping.github.io//favicon.ico?v=1649944114382">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://hsuchiaping.github.io//styles/main.css">
 
@@ -30,7 +30,7 @@
   <div class="site-header">
     <div class="left">
       <a href="https://hsuchiaping.github.io/">
-        <img class="avatar" src="https://hsuchiaping.github.io//images/avatar.png?v=1649924983716" alt="" width="32px" height="32px">
+        <img class="avatar" src="https://hsuchiaping.github.io//images/avatar.png?v=1649944114382" alt="" width="32px" height="32px">
       </a>
       <a href="https://hsuchiaping.github.io/">
         <h1 class="site-title">Gridea</h1>
@@ -87,6 +87,273 @@
           </div>
           <div class="post-content">
             <h1 id="运算符">运算符</h1>
+<h2 id="算术运算符算术运算的操作符号">算术运算符：算术运算的操作符号</h2>
+<h3 id="二元运算符">二元运算符</h3>
+<ol>
+<li>加<code>＋</code></li>
+</ol>
+<pre><code>var num = 1 + 2;
+</code></pre>
+<ol start="2">
+<li>减<code>－</code></li>
+</ol>
+<pre><code>var num = 2 -1;
+</code></pre>
+<ol start="3">
+<li>乘<code>*</code></li>
+</ol>
+<pre><code>var num = 1 * 3;
+</code></pre>
+<ol start="4">
+<li>除<code>/</code></li>
+</ol>
+<pre><code>var num = 2 / 1;
+</code></pre>
+<ol start="5">
+<li>取余（模）<code>%</code></li>
+</ol>
+<pre><code>console.log(12 % 10);
+//2
+</code></pre>
+<h3 id="一元运算符">一元运算符</h3>
+<ol>
+<li>
+<p>自增（技巧：按照运算顺序，看 a 和 ++ 的位置，在前面先执行。a++，先用a原值执行，再++赋值给a；++a，先++，然后赋值给a，作为整体）</p>
+<ol>
+<li>前自增，先自增，再取值。</li>
+</ol>
+<pre><code>var a = 1;
+console.log(++a);
+//2
+console.log(a);
+//2
+//先把a加自身即++a = 2，然后又把 2 赋值到a。所以++a 为 2，a为2；
+</code></pre>
+<ol start="2">
+<li>后自增，先取值，再自增。</li>
+</ol>
+<pre><code>var a = 1;
+console.log(a++);
+//a = 1
+console.log(a);
+//a = 2
+//先取出a的值来作为整体即a++等于1，再a加自身赋值给a，即a = 2;
+</code></pre>
+<ol>
+<li>自减（技巧：按照运算顺序，看 a 和 -- 的位置，在前面先执行。a--，先用a原值执行，再--赋值给a；--a，先--，然后赋值给a，作为整体）</li>
+<li>前自减，先自减，再取值。</li>
+</ol>
+<pre><code>var a = 1;
+console.log(--a);
+//0
+console.log(a);
+//0
+//先把a减自身即--a = 0，然后又把 0 赋值到a。所以--a 为 0，a为0；
+</code></pre>
+<ol start="2">
+<li>后自减，先取值，再自减。</li>
+</ol>
+<pre><code>var a = 1;
+console.log(a--);
+//a = 1
+console.log(a);
+//a = 0
+//先取出a的值来作为整体a--等于1，再a减自身赋值给a，即a = 0;
+</code></pre>
+</li>
+</ol>
+<h3 id="其他类型转number">其他类型转number</h3>
+<p>在进行算术运算时，系统会自动进行隐式转换，转为Number型</p>
+<ol>
+<li>String</li>
+</ol>
+<ul>
+<li>如果字面值是数字（包括正负号），则直接按照字面值转换，如果字面值是非数字，则为<code>NaN</code>。</li>
+<li>空的字符串，转换结果为0.</li>
+</ul>
+<ol start="2">
+<li>Boolean</li>
+</ol>
+<ul>
+<li>true为1</li>
+<li>false为0</li>
+</ul>
+<ol start="3">
+<li>undefined</li>
+</ol>
+<ul>
+<li>NaN</li>
+</ul>
+<ol start="4">
+<li>null</li>
+</ol>
+<ul>
+<li>0</li>
+</ul>
+<ol start="5">
+<li>Symbol()</li>
+</ol>
+<ul>
+<li>报错，TypeError</li>
+</ul>
+<ol start="6">
+<li>对象</li>
+</ol>
+<ul>
+<li>NaN</li>
+</ul>
+<h2 id="赋值运算符变量赋值的操作符号二元运算符">赋值运算符：变量赋值的操作符号，二元运算符</h2>
+<ol>
+<li><code>=</code>把右边的值赋值给左边<br>
+var num = 1;<br>
+console.log(num);<br>
+//1</li>
+<li><code>+=</code>先加右边的值再把和赋值给右边<br>
+var num = 1;<br>
+num+=2;<br>
+console.log(num);<br>
+//3</li>
+<li><code>-=</code>先减去右边再把差赋值给右边<br>
+var num = 3;<br>
+num-=1;<br>
+console.log(num);<br>
+//2</li>
+<li><code>*=</code>先乘以右边再把结果赋值给左边<br>
+var num = 2;<br>
+num*=2;<br>
+console.log(4);<br>
+//2</li>
+<li><code>/=</code>先除以右边再把结果赋值给左边<br>
+var num = 4;<br>
+num/=2;<br>
+console.log(num);<br>
+//2</li>
+<li><code>%=</code>除以左边的值，取余（模），再把余数赋值给左边<br>
+var num = 5;<br>
+num%=2;<br>
+console.log(num);<br>
+//1</li>
+</ol>
+<h2 id="关系运算符判断关系的操作符号属于二元操作符关系成立为true不成立为false">关系运算符：判断关系的操作符号，属于二元操作符，关系成立为<code>true</code>，不成立为<code>false</code></h2>
+<ol>
+<li><code>&gt;</code>大于，大于为真<br>
+var num1 = 2;<br>
+var num2 = 3;<br>
+console.log(num1 &gt; num2);<br>
+//false<br>
+console.log(num2 &gt; num1);<br>
+//true</li>
+<li><code>&lt;</code>小于，小于为真<br>
+var num1 = 2;<br>
+var num2 = 3;<br>
+console.log(num1 &lt; num2);<br>
+//true<br>
+console.log(num2 &lt; num1);<br>
+//false</li>
+<li><code>&gt;=</code>大于等于，大于或等于为真<br>
+var num1 = 2;<br>
+var num2 = 3;<br>
+var num3 = 3;<br>
+console.log(num1 &gt;= num2);<br>
+console.log(num2 &gt;= num1);<br>
+//false<br>
+//true<br>
+console.log(num2 &gt;= num3);<br>
+//true</li>
+<li><code>&lt;=</code>小于等于，小于或者等于为真<br>
+var num1 = 2;<br>
+var num2 = 3;<br>
+var num3 = 3;<br>
+console.log(num1 &lt;= num2);<br>
+console.log(num2 &lt;= num1);<br>
+//true<br>
+//false<br>
+console.log(num2 &lt;= num3);<br>
+//true</li>
+<li><code>==</code>等于，只比对值，不比对数据类型，值相等为真<br>
+var num1 = 2;<br>
+var num2 = 2;<br>
+var num3 = 3;<br>
+console.log(num1 == num2);<br>
+//true<br>
+console.log(num1 == num3);<br>
+//false</li>
+<li><code>!=</code>不等于，值不等为真<br>
+var num1 = 2;<br>
+var num2 = 2;<br>
+var num3 = 3;<br>
+console.log(num1 != num2);<br>
+//false<br>
+console.log(num1 != num3);<br>
+//true</li>
+<li><code>===</code>恒等于，全等于。比对值和数据类型，都要比对。全部相同才为真。<br>
+var num1=1;<br>
+var str=&quot;1&quot;;<br>
+var num2=1;<br>
+console.log(num1 === num2);<br>
+//true<br>
+console.log(num1 === str);<br>
+//false</li>
+<li><code>!==</code>不全等于。值和类型有一个不同，就为真。<br>
+var num1 = 1;<br>
+var str = &quot;1&quot;;<br>
+var num2 = 2;<br>
+var num4 = 1;<br>
+console.log(num1 !== str);<br>
+//true<br>
+console.log(num1 !== num2);<br>
+//true<br>
+console.log(num1 !== num4);<br>
+//false</li>
+</ol>
+<h2 id="逻辑运算符建立逻辑关系的操作符">逻辑运算符，建立逻辑关系的操作符</h2>
+<ol>
+<li><code>&amp;&amp;</code>与（且），用于判断时为左右两边的条件必须都满足。当左边表达式为false时，结果为false。当左边为true，结果为右边表达式的结果。<br>
+var num1 = 2;<br>
+var num2 = 3;<br>
+console.log(num1 &gt; num2 &amp;&amp; num1 &lt; 0);<br>
+//false<br>
+console.log(num1 &gt; num2 &amp;&amp; num1 &gt; 0);<br>
+//true</li>
+<li><code>||</code>或，两边表达式，有一个成立即可。左边为true，表达式结果为true。左边为false，表达式结果为右边的结果。<br>
+var num1 = 1;<br>
+var num2 = 2;<br>
+console.log(num1 &gt; num2 || num1 &lt;0);<br>
+//false<br>
+console.log(num1 &gt; num2 || num1 &gt; 0);<br>
+//true</li>
+<li><code>!</code>取反，一元运算符。将表达式的结果反过来。如果表达式结果为true，则最终结果为false。反之亦然。<br>
+var num1 = 2;<br>
+console.log(!(num1 != 2));<br>
+//true<br>
+var num1 = 2;<br>
+console.log(!(num1 == 2));<br>
+//false</li>
+</ol>
+<h3 id="其他类型转boolean值-如果进行逻辑运算时需要操作的结果是boolean值而目标数不是boolean值则系统会进行自动转换隐式转换">其他类型转Boolean值。如果进行逻辑运算时，需要操作的结果是Boolean值，而目标数不是Boolean值，则系统会进行自动转换（隐式转换）。</h3>
+<ol>
+<li>Number
+<ol>
+<li>非0的数字，结果为true；</li>
+<li>0和NaN，为false</li>
+</ol>
+</li>
+<li>String
+<ol>
+<li>空的字符串为false</li>
+<li>其他为true</li>
+</ol>
+</li>
+<li>undefined为false</li>
+<li>null为false</li>
+<li>symbol为true</li>
+<li>objec为true</li>
+</ol>
+<h3 id="三元运算符">三元运算符</h3>
+<p>如果表达式成立，则结果为<code>:</code>前的值，否则为后面的值<br>
+var age = Number(prompt(&quot;输入一个数字&quot;));<br>
+console.log(age &gt; 18?&quot;成年&quot;:&quot;未成年&quot;);<br>
+//当age大于18则显示成年，否则显示未成年。</p>
 
           </div>
         </div>
