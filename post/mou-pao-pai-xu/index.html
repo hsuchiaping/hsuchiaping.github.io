@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://hsuchiaping.github.io//favicon.ico?v=1650208633846">
+<link rel="shortcut icon" href="https://hsuchiaping.github.io//favicon.ico?v=1650209747876">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://hsuchiaping.github.io//styles/main.css">
 
@@ -30,7 +30,7 @@
   <div class="site-header">
     <div class="left">
       <a href="https://hsuchiaping.github.io/">
-        <img class="avatar" src="https://hsuchiaping.github.io//images/avatar.png?v=1650208633846" alt="" width="32px" height="32px">
+        <img class="avatar" src="https://hsuchiaping.github.io//images/avatar.png?v=1650209747876" alt="" width="32px" height="32px">
       </a>
       <a href="https://hsuchiaping.github.io/">
         <h1 class="site-title">Gridea</h1>
@@ -88,11 +88,8 @@
           <div class="post-content">
             <pre><code>        var arr = [1238888, 34509, 345978, 121, 5698];
         for (i = 0; i &lt; arr.length; i++) {
-            for (j = 0; j &lt; arr.length; j++) {
-                if(arr[i] == arr[j]){
-                    continue;
-                };
-                if(arr[i] &gt; arr[j] &amp;&amp; i &lt; j){
+            for (j = i + 1; j &lt; arr.length; j++) {
+                if(arr[i] &gt; arr[j]){
                     var temp = arr[i];
                     arr[i] = arr[j];
                     arr[j] = temp;
