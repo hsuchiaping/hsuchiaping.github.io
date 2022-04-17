@@ -5,7 +5,7 @@
     
 <meta charset="utf-8" >
 
-<title>Font | Gridea</title>
+<title>冒泡排序 | Gridea</title>
 <meta name="description" content="温故而知新">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -80,28 +80,26 @@
       <div class="content-container">
         <div class="post-detail">
           
-          <h2 class="post-title">Font</h2>
+          <h2 class="post-title">冒泡排序</h2>
           <div class="post-info post-detail-info">
-            <span><i class="icon-calendar-outline"></i> 2022-04-02</span>
+            <span><i class="icon-calendar-outline"></i> 2022-04-17</span>
             
           </div>
           <div class="post-content">
-            <h1 id="font-family">font-family</h1>
-<p>tahoma</p>
-<h2 id="中文名unicode">中文名Unicode：</h2>
-<p>用 unicode 表示，不用 SimSun, 是因为 Firefox 的某些版本和 Opera 不支持 SimSun 的写法。注释乱码：强烈建议不要用中文注释。</p>
-<pre><code>新细明体 \65B0\7EC6\660E\4F53
-细明体 \7EC6\660E\4F53
-标楷体 \6807\6977\4F53
-黑体 \9ED1\4F53
-宋体 \5B8B\4F53
-新宋体 \65B0\5B8B\4F53
-仿宋 \4EFF\5B8B
-楷体 \6977\4F53
-仿宋_GB2312 \4EFF\5B8B_GB2312
-楷体_GB2312 \6977\4F53_GB2312
-微软正黑体 \5FAE\x8F6F\6B63\9ED1\4F53
-微软雅黑 \5FAE\8F6F\96C5\9ED1
+            <pre><code>        var arr = [1238888, 34509, 345978, 121, 5698];
+        for (i = 0; i &lt; arr.length; i++) {
+            for (j = 0; j &lt; arr.length; j++) {
+                if(arr[i] == arr[j]){
+                    continue;
+                };
+                if(arr[i] &gt; arr[j] &amp;&amp; i &lt; j){
+                    var temp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp;
+                };
+            };
+        };
+        document.write(arr);
 </code></pre>
 
           </div>
@@ -109,9 +107,9 @@
 
         
           <div class="next-post">
-            <a class="purple-link" href="https://hsuchiaping.github.io/post/401-lessonandzuo-ye/">
+            <a class="purple-link" href="https://hsuchiaping.github.io/post/js-di-san-tian/">
               <h3 class="post-title">
-                下一篇：401-lesson&amp;作业
+                下一篇：# JS 第三天
               </h3>
             </a>
           </div>

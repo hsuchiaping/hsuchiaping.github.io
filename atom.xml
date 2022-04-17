@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://hsuchiaping.github.io/</id>
     <title>Gridea</title>
-    <updated>2022-04-17T14:17:46.129Z</updated>
+    <updated>2022-04-17T15:17:18.184Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://hsuchiaping.github.io/"/>
     <link rel="self" href="https://hsuchiaping.github.io/atom.xml"/>
@@ -10,6 +10,29 @@
     <logo>https://hsuchiaping.github.io/images/avatar.png</logo>
     <icon>https://hsuchiaping.github.io/favicon.ico</icon>
     <rights>All rights reserved 2022, Gridea</rights>
+    <entry>
+        <title type="html"><![CDATA[冒泡排序]]></title>
+        <id>https://hsuchiaping.github.io/post/mou-pao-pai-xu/</id>
+        <link href="https://hsuchiaping.github.io/post/mou-pao-pai-xu/">
+        </link>
+        <updated>2022-04-17T15:16:49.000Z</updated>
+        <content type="html"><![CDATA[<pre><code>        var arr = [1238888, 34509, 345978, 121, 5698];
+        for (i = 0; i &lt; arr.length; i++) {
+            for (j = 0; j &lt; arr.length; j++) {
+                if(arr[i] == arr[j]){
+                    continue;
+                };
+                if(arr[i] &gt; arr[j] &amp;&amp; i &lt; j){
+                    var temp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp;
+                };
+            };
+        };
+        document.write(arr);
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[# JS 第三天]]></title>
         <id>https://hsuchiaping.github.io/post/js-di-san-tian/</id>
@@ -1446,63 +1469,6 @@ vertical-align:middle(元素的中垂点与父元素的基线加1/2父元素中�
         <updated>2022-03-31T01:21:41.000Z</updated>
         <content type="html"><![CDATA[<h1 id="径向渐变-ellipse-gredient">径向渐变 ellipse-gredient</h1>
 <h2 id="概念即椭圆渐变渐变效果沿着椭圆的">概念：即椭圆渐变，渐变效果沿着椭圆的</h2>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[CSS3基础——线性渐变]]></title>
-        <id>https://hsuchiaping.github.io/post/css3-ji-chu-xian-xing-jian-bian/</id>
-        <link href="https://hsuchiaping.github.io/post/css3-ji-chu-xian-xing-jian-bian/">
-        </link>
-        <updated>2022-03-30T13:55:24.000Z</updated>
-        <content type="html"><![CDATA[<h1 id="线性渐变">线性渐变</h1>
-<h2 id="渐变背景">渐变背景</h2>
-<p>比较规则的渐变背景，通常使用1px的图片来设置渐变的效果。不规则的渐变则是用图片做背景，开发和维护较麻烦。CSS3新增渐变背景：线性渐变和径向渐变。使用background-image属性。</p>
-<p>##线性渐变概念：</p>
-<p>沿着一条直线的背景颜色渐变。至少有两种颜色。</p>
-<p>语法：</p>
-<p><code>background-image:linear-gredient(渐变方向，颜色1 位置1 ，颜色2 位置2，颜色3 位置3）</code></p>
-<ol>
-<li>
-<p>渐变方向</p>
-<p>to + 渐变色前进的方向（上下左右八个方位，或者八个角度）</p>
-<ul>
-<li>top = 0deg</li>
-<li>top right = 45deg or -315deg</li>
-<li>right = 90deg or -270deg</li>
-<li>bottom right = 135deg or -225</li>
-<li>bottom = 180deg or -180deg</li>
-<li>bottom left = 225deg or -135deg</li>
-<li>left = 270edg or - 90deg</li>
-<li>top left = 315deg or -45deg</li>
-</ul>
-</li>
-</ol>
-<figure data-type="image" tabindex="1"><img src="https://hsuchiaping.github.io//post-images/1648650211665.png" alt="线性渐变" loading="lazy"></figure>
-<ol start="2">
-<li>
-<p>色标</p>
-<p>即颜色 + 位置，用于控制渐变过度的效果。可以设置多个。<br>
-**   - 颜色可用单词、十六进制、RGB表示。</p>
-<ul>
-<li>位置，用像素、百分比表示。**</li>
-<li>只设置颜色，默认是均匀渐变。</li>
-<li>如果首尾的色标没有设置位置，默认在0%或者100%。</li>
-<li>如果首位的色标没在0%或者100%，会以纯色填充。<br>
-<code>background-image:linear-gredient(to right,red 20% ,blue 40%,yellow 60%)</code></li>
-</ul>
-<p>0 ~ 20%是red，20% ~ 40%是red到blue的渐变，40%到60%是blue到yellow的渐变，60%是yellow</p>
-<ul>
-<li>如果两个相邻的色标位置相同，那么中间渐变范围为0，就会出现断层的效果。<br>
-<code>background-image:linear-gredient(to right,red 0,red 20px,blue 20px)</code></li>
-</ul>
-</li>
-</ol>
-<h2 id="重复性渐变">重复性渐变</h2>
-<ul>
-<li>重复铺设线性渐变，使用<code>repeating-linear-gredient</code></li>
-<li>只有首尾的色标不在0%或100%时，重复线渐变才有效。</li>
-<li>语法 <code>background-iamge:repeating-linear-gredient(to 渐变方向，颜色1 位置1，颜色2 位置2，颜色3 位置3)</code></li>
-</ul>
 ]]></content>
     </entry>
 </feed>
