@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://hsuchiaping.github.io/</id>
     <title>Gridea</title>
-    <updated>2022-04-14T14:31:24.212Z</updated>
+    <updated>2022-04-17T12:20:07.439Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://hsuchiaping.github.io/"/>
     <link rel="self" href="https://hsuchiaping.github.io/atom.xml"/>
@@ -10,6 +10,56 @@
     <logo>https://hsuchiaping.github.io/images/avatar.png</logo>
     <icon>https://hsuchiaping.github.io/favicon.ico</icon>
     <rights>All rights reserved 2022, Gridea</rights>
+    <entry>
+        <title type="html"><![CDATA[# JS 第三天]]></title>
+        <id>https://hsuchiaping.github.io/post/js-di-san-tian/</id>
+        <link href="https://hsuchiaping.github.io/post/js-di-san-tian/">
+        </link>
+        <updated>2022-04-17T12:09:14.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="switch">switch</h2>
+<p>一般用于固定的判断。比如月、周类似的这种有固定条件数<br>
+语法：</p>
+<pre><code>switch(变量){
+    case 值 :
+        执行条件
+    case 值 :
+        执行语句;
+        break
+    ...
+    default :
+        break
+}
+</code></pre>
+<h2 id="while">while</h2>
+<p>当条件满足开始循环，满足就会一直循环，直到不满足时停止。</p>
+<pre><code>while(condition){
+    执行的语句
+}
+</code></pre>
+<h2 id="do-while">do while</h2>
+<p>执行一次再判断条件是否满足。满足则继续循环并且判断条件。</p>
+<pre><code>do{
+    执行的语句
+}while(condition)
+</code></pre>
+<h2 id="for">for</h2>
+<p>满足条件，就执行。不满足就退出。<br>
+i= 1 ：餐宿初始化<br>
+i&lt; x :  循环条件<br>
+i ++ : 步进</p>
+<pre><code>for(i = 1; i&lt; x ; i++&gt;){
+    执行的语句
+}
+</code></pre>
+<h2 id="break-和-continue">break 和 continue</h2>
+<p>break：结束本层循环<br>
+continue： 结束本层本次循环，进行下次循环</p>
+<h2 id="使用总结">使用总结</h2>
+<p>如果需要至少循环一次，使用dowhile<br>
+如果是死循环，则用while<br>
+其他大部分情况用for</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[JS第二天]]></title>
         <id>https://hsuchiaping.github.io/post/js-di-er-tian/</id>
@@ -645,115 +695,355 @@ typeof num;
         </link>
         <updated>2022-04-12T08:26:38.000Z</updated>
         <content type="html"><![CDATA[<h1 id="基础题">基础题</h1>
-<ul>
+<ol>
 <li>计算从100加到500的和 （for + 累计变量）</li>
-</ul>
+</ol>
 <pre><code>    var total = 0;
     for(i = 100; i &lt;= 500; i++){
         total += i;
     };
     document.write(total);
 </code></pre>
-<ul>
+<ol start="2">
 <li>计算x的y次方(不考虑y正负，和考虑正负)，其中x和y是用户输入的整数 (if +for +累计变量)</li>
-</ul>
+</ol>
 <pre><code>    var x = Number(prompt(&quot;输入x,&quot;));
     var y = Number(prompt(&quot;输入y,&quot;));
     var z = x ** y;
     document.write(z);
 </code></pre>
-<ul>
-<li>获取100~1000内的所有水仙花数以及水仙花数的个数（for+if + 计分板变量）<pre><code>    for(var n1 = 100;n1 &lt;= 1000;n1++){
-      for(var n2 = 0;n2 &lt;=100;n2++){
-          for(var n3 = 0;n3 &lt;=10;n3++){
-              if (n2 % 10 == 0 &amp;&amp; ((n1 / 100) ** 3 + (n2 / 10) ** 3 + n3 ** 3 == n1 + n2 + n3) &amp;&amp; (n1 + n2 + n3) &lt; 1000){
-                  document.write(n1 + n2 +n3 + &quot;&lt;br&gt;&quot;);
+<ol start="3">
+<li>获取100~1000内的所有水仙花数以及水仙花数的个数（for+if + 计分板变量）</li>
+</ol>
+<pre><code>      for (i = 1; i &lt;= 9; i++) {
+          for (j = 0; j &lt;= 9; j++) {
+              for (k = 0; k &lt;= 9; k++) {
+                  if ((i ** 3 + j ** 3 + k ** 3) == (i * 100 + j * 10 + k)){
+                      document.write(`${i*100+j*10+k}是水仙花数&lt;/br&gt;`);
+                  };
               };
           };
       };
-  };
+  ```
+4. 鸡兔一共15只，一共40只脚，用程序求得数量（for+if）
 </code></pre>
-</li>
-<li>鸡兔一共15只，一共40只脚，用程序求得数量（for+if）<pre><code>y是鸡，x是兔
-  // var y = 0;
-  // for(i = 1; i &lt;= 15;i++){
-  //     var y = i;
-  //     var x = 15 - y;
-  //     var z = 60 - 2 * y;
-  //     if (z == 40) {
-  //         document.write(&quot;鸡有：&quot; + y + &quot;只&quot;);
-  //         document.write(&quot;&lt;hr&gt;&quot;);
-  //         document.write(&quot;兔有：&quot; + x + &quot;只&quot;);
-  //     };
-  // };
+<p>y是鸡，x是兔<br>
+// var y = 0;<br>
+// for(i = 1; i &lt;= 15;i++){<br>
+//     var y = i;<br>
+//     var x = 15 - y;<br>
+//     var z = 60 - 2 * y;<br>
+//     if (z == 40) {<br>
+//         document.write(&quot;鸡有：&quot; + y + &quot;只&quot;);<br>
+//         document.write(&quot;<hr>&quot;);<br>
+//         document.write(&quot;兔有：&quot; + x + &quot;只&quot;);<br>
+//     };<br>
+// };</p>
+<pre><code>5. 输入n的值，计算  1*1+2*2+...+n*n的和 (for + 累计变量)
 </code></pre>
-</li>
-<li>输入n的值，计算  1<em>1+2</em>2+...+n*n的和 (for + 累计变量)<pre><code>var total = 0;
-  // var n = prompt(&quot;输入&quot;,);
-  // for(i = 1;i &lt;= n;i++){
-  //     var x = i * i;
-  //     var total = total + x;
-  // };
-  // document.write(total);
+<p>var total = 0;<br>
+// var n = prompt(&quot;输入&quot;,);<br>
+// for(i = 1;i &lt;= n;i++){<br>
+//     var x = i * i;<br>
+//     var total = total + x;<br>
+// };<br>
+// document.write(total);</p>
+<pre><code>6. 组合问题:用一元兑换1分、2分、5分的硬币，兑换数量为50枚，问可以有多少种组合的方式?(嵌套for循环 +计分板变量)
 </code></pre>
-</li>
-<li>组合问题:用一元兑换1分、2分、5分的硬币，兑换数量为50枚，问可以有多少种组合的方式?(嵌套for循环 +计分板变量)</li>
-</ul>
-<pre><code>    var count = 0;
-    for (var one = 0; one &lt;= 50; one++) {
-        for (var two = 0; two &lt;= 50; two++) {
-            for (var five = 0; five &lt;= 20; five++) {
-                if (one + 2 * two + 5 * five == 100 &amp;&amp; one + two + five == 50) {
-                    document.write(&quot;one=&quot; + one, &quot;two=&quot; + two, &quot;five=&quot; + five, &quot;&lt;br&gt;&quot;);
-                    count++;
-                }
+<pre><code>var count = 0;
+for (var one = 0; one &lt;= 50; one++) {
+    for (var two = 0; two &lt;= 50; two++) {
+        for (var five = 0; five &lt;= 20; five++) {
+            if (one + 2 * two + 5 * five == 100 &amp;&amp; one + two + five == 50) {
+                document.write(&quot;one=&quot; + one, &quot;two=&quot; + two, &quot;five=&quot; + five, &quot;&lt;br&gt;&quot;);
+                count++;
             }
         }
     }
-    document.write(count);
+}
+document.write(count);
 </code></pre>
-<ul>
-<li>抓球问题:有红球5个，黑球7个、白球9个。随机取出12个，求所有的取球方式并输出方式数量?(嵌套for循环 +计分板变量)</li>
-</ul>
-<pre><code>    var count = 0;
-    for (var red = 0; red &lt;= 5; red++) {
-        for (var black = 0; black &lt;= 7; black++) {
-            for (var blue = 0; blue &lt;= 9; blue++) {
-                if (red + black + blue == 12) {
-                    document.write(&quot;red=&quot; + red, &quot;black=&quot; + black, &quot;blue=&quot; + blue, &quot;&lt;br&gt;&quot;);
-                    count++;
-                }
+<pre><code>7. 抓球问题:有红球5个，黑球7个、白球9个。随机取出12个，求所有的取球方式并输出方式数量?(嵌套for循环 +计分板变量)
+</code></pre>
+<pre><code>var count = 0;
+for (var red = 0; red &lt;= 5; red++) {
+    for (var black = 0; black &lt;= 7; black++) {
+        for (var blue = 0; blue &lt;= 9; blue++) {
+            if (red + black + blue == 12) {
+                document.write(&quot;red=&quot; + red, &quot;black=&quot; + black, &quot;blue=&quot; + blue, &quot;&lt;br&gt;&quot;);
+                count++;
             }
         }
     }
-    document.write(count);
+}
+document.write(count);
 </code></pre>
-<ul>
-<li>猜数字游戏:系统随机生成一个1000内的随机数，用户输入数字进行猜测，如果大了则提示大了，小了则提示小了。直到相等则游戏结束。结束后输出游戏的猜测次数。(while +计分板变量)</li>
-</ul>
-<pre><code>
+<pre><code>8. 猜数字游戏:系统随机生成一个1000内的随机数，用户输入数字进行猜测，如果大了则提示大了，小了则提示小了。直到相等则游戏结束。结束后输出游戏的猜测次数。(while +计分板变量)
 </code></pre>
-<p>用户输入一个数字，倒序输出每位数，并输出位数之和(while +累计变量)<br>
-输入一批整数，使用循环求出最大值与最小值，输入0时结束(while)<br>
-可乐问题:给20块钱买可乐，每瓶可乐3块钱，喝完之后退瓶子可以换回1块钱，问最多可以喝到多少瓶可乐(while +计分板变量)<br>
-获取100内的所有质数(for或while )<br>
-实现九九乘法表<br>
-实现一个三角形：用户输入三角形的行数<br>
-实现一个菱形：用户输入菱形的行数<br>
-用户多次输入文字，当输入exit为止（do.while）<br>
-单次用户登录和3次用户登录（do。while）<br>
-用户登录次数不能超过三次（do..while）<br>
-计算当年的第几天(switch)<br>
-生成一个随机的成都车牌号(如 川A 7A9N4)(字符编码)<br>
-用户输入一个字符串，统计有多少个数字，大写字母，小写字母，其他字符  (字符编码)</p>
-<h1 id="扩展题">扩展题</h1>
-<p>从键盘输入某个十进制整数数，转换成对应的二进制整数并输出（需要二进制知识）<br>
-输入一批整数，使用循环求出最大值与最小值，输入0时结束<br>
-将某个字符串的大写转为小写，小写转为大写（需要字符编码知识点）<br>
-利用1、2、3、4个数字,能组成多少个互不相同且无重复数字的三位数<br>
-两个乒乓球队进行比赛,各出三人。甲队为a、b,、c三人,乙队为x,、y、z三人。以抽签决定比赛名单。有人向队员打听比赛的名单。a说他不和x比,c说他不和x、,z比。请编程序找出三队赛手的名单<br>
-36块砖，36人搬，男搬4、女搬3、两个小儿抬一砖，求一次全搬完，求男、女、小儿各几人，以及共有几组解<br>
-有30个人，其中有男人、女人和小孩，在一家饭馆吃饭花了50先令：每个男人花3先令，每个女人花2先令，每个小孩花1先令。问男人、女人和小孩各有几人</p>
+<pre><code>    var num = parseInt(Math.random()*1000);
+    document.write(num);
+    var guess = parseInt(prompt(&quot;输入一个数&quot;));
+    while(num != guess){
+        if(num &gt; guess){
+            alert(&quot;smaller!&quot;);
+        }else{
+            alert(&quot;bigger&quot;);
+        }
+        var guess = parseInt(prompt(&quot;输入一个数&quot;));
+    };
+    document.write(&quot;Bingo!&quot;);
+</code></pre>
+<pre><code>9. 用户输入一个数字，倒序输出每位数，并输出位数之和(while +累计变量)
+</code></pre>
+<pre><code>    var num = parseInt(prompt(&quot;输入一个数字&quot;));
+    var i = 0;
+    while(num &gt;= 1){
+        var n = num % 10;
+        document.write(n);
+        num = parseInt(num / 10);
+        i++;
+        
+    };
+    document.write(i);
+</code></pre>
+<pre><code>10. 输入一批整数，使用循环求出最大值与最小值，输入0时结束(while)
+</code></pre>
+<pre><code>    var num1 = parseInt(prompt(&quot;请输入数字&quot;));
+    var num2 = parseInt(prompt(&quot;请输入数字&quot;));
+    if (num1 &gt; num2) {
+        var max = num1;
+        var min = num2;
+
+    } else {
+        var max = num2;
+        var min = num1;
+    };
+    while (num1 != 0 &amp;&amp; num2 != 0 &amp;&amp; num3 != 0) {
+        alert(`最小值${min},最大值${max}`);
+        var num3 = parseInt(prompt(&quot;请输入数字&quot;));
+        if (num3 &gt; max) {
+            var max = num3;
+        } else if (num3 &lt; min) {
+            var min = num3;
+        };
+    };
+</code></pre>
+<pre><code>11. 可乐问题:给20块钱买可乐，每瓶可乐3块钱，喝完之后退瓶子可以换回1块钱，问最多可以喝到多少瓶可乐(while +计分板变量)
+</code></pre>
+<pre><code>    var count = 0;
+    var money = 20;
+    var re = 0;
+    var total = 0;
+    while(money &gt; 3){
+        count = parseInt(money / 3);
+        re = money % 3;
+        money = count / 1 + re;
+        total += count;
+    };
+    document.write(total);
+</code></pre>
+<pre><code>12. 获取100内的所有质数(for或while )
+</code></pre>
+<pre><code>   for (var i = 1; i &lt;= 100; i++) {
+        var re = 0;
+        for (var j = 1; j &lt;= i;j++) {
+            if (i % j == 0) {
+                re+=1;
+            };
+        }; 
+        if(re == 1 || re == 2){
+                document.write(i);
+            };
+    };
+</code></pre>
+<pre><code>13. 实现九九乘法表
+</code></pre>
+<pre><code>    for(i = 1;i &lt;= 9; i++){
+        for(j = 1; j&lt;= i; j++)
+        document.write(`${j}×${i}=${j*i}&amp;nbsp;&amp;nbsp;`);
+        document.write(&quot;&lt;/br&gt;&quot;);
+    };
+</code></pre>
+<pre><code>14. 实现一个三角形：用户输入三角形的行数
+</code></pre>
+<pre><code>    var row = parseInt(prompt(&quot;输入三角形的行数&quot;));
+    for(i = row; i &gt;0; i--){
+        for(j = 1;j &lt;= i; j++){
+            document.write(`&amp;#9733;&amp;nbsp;`);
+        };
+        document.write(`&lt;/br&gt;`);
+    };
+</code></pre>
+<pre><code>15. 实现一个菱形：用户输入菱形的行数
+</code></pre>
+<p>var row = parseInt(prompt(&quot;输入菱形的行数&quot;));<br>
+for(i = row/2; i &gt; 0;i--){<br>
+for(j = i;j &gt; 0;j--){<br>
+document.write(<code>&amp;#160;&amp;#160;</code>);<br>
+};<br>
+for(m = 0;m &lt;= row / 2 - i; m++){<br>
+document.write(<code>&amp;#9733;</code>);<br>
+};<br>
+for(m = 0;m &lt;= row / 2 - i; m++){<br>
+document.write(<code>&amp;#9733;</code>);<br>
+};<br>
+document.write(<code>&lt;/br&gt;</code>);<br>
+};<br>
+for(i = 1;i&lt;=row / 2; i++){<br>
+for(j = 0;j &lt;= i;j++){<br>
+document.write(<code>&amp;#160;&amp;#160;</code>);<br>
+};<br>
+for(m = row / 2 - i;m &gt;0; m--){<br>
+document.write(<code>&amp;#9733;</code>);<br>
+};<br>
+for(m = row / 2 - i;m &gt;0; m--){<br>
+document.write(<code>&amp;#9733;</code>);<br>
+}<br>
+document.write(<code>&lt;/br&gt;</code>);<br>
+}</p>
+<pre><code>16. 用户多次输入文字，当输入exit为止（do.while）
+</code></pre>
+<pre><code>    do {
+        var  word = prompt(&quot;输入文字&quot;);
+    } while (word != &quot;exit&quot;);
+</code></pre>
+<pre><code>17. 单次用户登录和3次用户登录（do。while）
+</code></pre>
+<p>//单次<br>
+var account = prompt(&quot;用户名&quot;);<br>
+var psw = prompt(&quot;密码&quot;);<br>
+//3次<br>
+var n = 3;<br>
+do{<br>
+var account = prompt(&quot;用户名&quot;);<br>
+var psw = prompt(&quot;密码&quot;);<br>
+n--;<br>
+}while(n &gt; 0 );</p>
+<pre><code>18. 用户登录次数不能超过三次（do..while）
+</code></pre>
+<pre><code>    var n = 3;
+    do{
+        var account = prompt(&quot;用户名&quot;);
+        var psw = prompt(&quot;密码&quot;);
+        n--;
+    }while(n &gt; 0 );
+</code></pre>
+<pre><code>19. 计算当年的第几天(switch)
+</code></pre>
+<pre><code>    var year = parseInt(prompt(&quot;年份&quot;));
+    var month = parseInt(prompt(&quot;月份&quot;));
+    var feb = 28;
+    if((year % 4 == 0 &amp;&amp; year % 100 != 0)||year % 400 == 0){
+        feb+=1;
+    }
+    var days = 1;
+    switch (month) {
+        case 12:
+            days+=30;
+        case 11:
+            days+=31;
+        case 10:
+            days+=30;
+        case 9:
+            days+=31;
+        case 8:
+            days+=31;
+        case 7:
+            days+=30;
+        case 6:
+            days+=31;
+        case 5:
+            days+=30;
+        case 4:
+            days+=31;
+        case 3:
+            days+=feb;
+        case 2:
+            days += 31;
+        case 1:
+            days;
+            break;
+    };
+    document.write(`${year}年${month}月1号是第${days}天`);
+</code></pre>
+<pre><code>20. 生成一个随机的成都车牌号(如 川A 7A9N4)(字符编码)
+</code></pre>
+<pre><code>    var start = &quot;川&amp;#65;&quot;
+    var i = 5;
+    while(i &gt; 0){
+        do{
+        var num = 48 + parseInt(Math.random()*(90 - 48 + 1));
+    }while(num&gt;=58 &amp;&amp; num &lt;=64)
+    var a = String.fromCharCode(num);
+    start += a;
+    i--;
+    }
+        document.write(start);
+</code></pre>
+<pre><code>21. 用户输入一个字符串，统计有多少个数字，大写字母，小写字母，其他字符  (字符编码)
+</code></pre>
+<pre><code>    var a = prompt(&quot;输入&quot;);
+    var num = 0;
+    var upper = 0;
+    var lower = 0;
+    var other = 0;
+    for (i = 0; i &lt; a.length; i++) {
+        if (a.charCodeAt(i) &gt;= 48 &amp;&amp; a.charCodeAt(i) &lt;= 57) {
+            num++;
+        } else if (a.charCodeAt(i) &gt;= 65 &amp;&amp; a.charCodeAt(i) &lt;= 90) {
+            upper++;
+        } else if (a.charCodeAt(i) &gt;= 97 &amp;&amp; a.charCodeAt(i) &lt;= 122) {
+            lower++;
+        } else if ((a.charCodeAt(i) &gt;= 0 &amp;&amp; a.charCodeAt(i) &lt;= 47) || (a.charCodeAt(i) &gt;= 58 &amp;&amp; a.charCodeAt(i) &lt;=
+                64) || (a.charCodeAt(i) &gt;= 91 &amp;&amp; a.charCodeAt(i) &lt;= 96) || (a.charCodeAt(i) &gt;= 123 &amp;&amp; a.charCodeAt(
+                i) &lt;= 127)) {
+            other++;
+        };
+    };
+    document.write(`数字有${num}个，大写字母有${upper}个，小写字母有${lower}个，其他字符有${other}个`);
+</code></pre>
+<pre><code># 扩展题
+1. 从键盘输入某个十进制整数数，转换成对应的二进制整数并输出（需要二进制知识）
+</code></pre>
+<pre><code>    var num = parseInt(prompt(&quot;输入一个十进制的数&quot;));
+    var result = &quot;&quot;;
+    do {
+        var re = num % 2;
+        num = parseInt(num / 2);
+        // 把re插入到字符串第一位：插入字符 + slice(位置)
+        result =(re + &quot;&quot;) + result.slice(0);
+    } while (num != 0);
+    alert(result);
+</code></pre>
+<pre><code>2. 输入一批整数，使用循环求出最大值与最小值，输入0时结束
+</code></pre>
+<p>var num1 = parseInt(prompt(&quot;请输入数字&quot;));<br>
+var num2 = parseInt(prompt(&quot;请输入数字&quot;));<br>
+if (num1 &gt; num2) {<br>
+var max = num1;<br>
+var min = num2;</p>
+<pre><code>    } else {
+        var max = num2;
+        var min = num1;
+    };
+    while (num1 != 0 &amp;&amp; num2 != 0 &amp;&amp; num3 != 0) {
+        alert(`最小值${min},最大值${max}`);
+        var num3 = parseInt(prompt(&quot;请输入数字&quot;));
+        if (num3 &gt; max) {
+            var max = num3;
+        } else if (num3 &lt; min) {
+            var min = num3;
+        };
+    };
+</code></pre>
+<pre><code>3. 将某个字符串的大写转为小写，小写转为大写（需要字符编码知识点）
+
+利用1、2、3、4个数字,能组成多少个互不相同且无重复数字的三位数
+两个乒乓球队进行比赛,各出三人。甲队为a、b,、c三人,乙队为x,、y、z三人。以抽签决定比赛名单。有人向队员打听比赛的名单。a说他不和x比,c说他不和x、,z比。请编程序找出三队赛手的名单
+36块砖，36人搬，男搬4、女搬3、两个小儿抬一砖，求一次全搬完，求男、女、小儿各几人，以及共有几组解
+有30个人，其中有男人、女人和小孩，在一家饭馆吃饭花了50先令：每个男人花3先令，每个女人花2先令，每个小孩花1先令。问男人、女人和小孩各有几人
+
+</code></pre>
 ]]></content>
     </entry>
     <entry>
@@ -1137,34 +1427,6 @@ vertical-align:middle(元素的中垂点与父元素的基线加1/2父元素中�
 <li>只有首尾的色标不在0%或100%时，重复线渐变才有效。</li>
 <li>语法 <code>background-iamge:repeating-linear-gredient(to 渐变方向，颜色1 位置1，颜色2 位置2，颜色3 位置3)</code></li>
 </ul>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[FC容器——IFC容器应用场景]]></title>
-        <id>https://hsuchiaping.github.io/post/fc-rong-qi-ifc-rong-qi-ying-yong-chang-jing/</id>
-        <link href="https://hsuchiaping.github.io/post/fc-rong-qi-ifc-rong-qi-ying-yong-chang-jing/">
-        </link>
-        <updated>2022-03-29T13:10:31.000Z</updated>
-        <content type="html"><![CDATA[<h1 id="ifc容器应用场景">IFC容器应用场景</h1>
-<h2 id="font-size">font-size</h2>
-<p>不同字体的大小会影响行盒高度，值越大，行盒高度越高</p>
-<h2 id="font-family">font-family</h2>
-<p>不同字体类型会影响行盒高度</p>
-<h2 id="height-line-height">height | line-height</h2>
-<p>影响高度</p>
-<h2 id="vertical-align">vertical-align</h2>
-<p>行级元素垂直方向上的对其<br>
-top顶线、middle中线、baseline基线、bottom底线</p>
-<h3 id="文本之间">文本之间</h3>
-<p>设置当前元素自己参考哪个位置与其他元素对其，默认是基线</p>
-<h3 id="文本与图片之间">文本与图片之间</h3>
-<p>文本基线对齐图片底部<br>
-文本设置vertical-align：文本按照自己的参考线与图片的底部对齐<br>
-图片设置vertical-align：图片按照自己的参考线与文本对齐</p>
-<h3 id="表格中文字垂直对齐">表格中文字垂直对齐</h3>
-<p>top：顶部对齐<br>
-middle：居中<br>
-bottom：底部对齐</p>
 ]]></content>
     </entry>
 </feed>
