@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://hsuchiaping.github.io/</id>
     <title>Gridea</title>
-    <updated>2022-04-17T15:36:10.987Z</updated>
+    <updated>2022-04-18T15:54:49.478Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://hsuchiaping.github.io/"/>
     <link rel="self" href="https://hsuchiaping.github.io/atom.xml"/>
@@ -10,6 +10,102 @@
     <logo>https://hsuchiaping.github.io/images/avatar.png</logo>
     <icon>https://hsuchiaping.github.io/favicon.ico</icon>
     <rights>All rights reserved 2022, Gridea</rights>
+    <entry>
+        <title type="html"><![CDATA[JS数组]]></title>
+        <id>https://hsuchiaping.github.io/post/js-shu-zu/</id>
+        <link href="https://hsuchiaping.github.io/post/js-shu-zu/">
+        </link>
+        <updated>2022-04-18T14:00:29.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="数组">数组</h1>
+<h2 id="概念">概念</h2>
+<p>一组有序数据的集合，每个数据有对应的编号：下标、索引。可以利用变化快速检索数据。</p>
+<ol>
+<li>索引
+<ol>
+<li>有数字组成</li>
+<li>取值范围：[0,数组长度)</li>
+</ol>
+</li>
+<li>元素
+<ol>
+<li>数组中存储的数据</li>
+</ol>
+</li>
+</ol>
+<h2 id="语法">语法</h2>
+<ol>
+<li>声明数组
+<ol>
+<li>空数组
+<ol>
+<li><code>var arr = [];</code></li>
+<li><code>var arr = new Array();</code></li>
+</ol>
+</li>
+<li>非空数组
+<ol>
+<li><code>var arr = [1,2,3,4];</code></li>
+<li><code>var arr = new Array(1,2,34,4);</code>当括号内只有一个数字时，会被识别为数组长度</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>向数组中添加数据<br>
+<code>arr[0] = 123;</code></li>
+<li>取出数组中的数据<br>
+<code>console.log(arr[1]);</code></li>
+<li>获取数组长度<br>
+<code>console.log(arr.length);</code></li>
+<li>删除最后一个元素<br>
+<code>arr.length--;</code></li>
+<li>将指定元素赋为空empty<br>
+<code>delete arr[1];</code></li>
+<li>数组遍历
+<ol>
+<li><code>for(i = 0;i &lt;arr.length;i++){}</code></li>
+<li><code>for(var index in arr)</code></li>
+<li><code>for(var n of arr)</code></li>
+</ol>
+</li>
+</ol>
+<h2 id="冒泡排序将数组按照从小到大的顺序排列-两两进行比较-较大的放在后面">冒泡排序：将数组按照从小到大的顺序排列。两两进行比较。较大的放在后面</h2>
+<pre><code>外层循环和内层循环的控制。
+在一组数中，把其中最大的数放到最后，从第一个数开始两两比较，需要n-1次位置调换。n-1就是内层循环的控制数。
+要把第2大的放在倒数第2位，需要n-2次位置调换。
+。
+。
+。
+以此类推，完成完整排序，最后一步需要1次位置调换。
+所以，整个的循环每次的位置调换次数为：1,2,...,n-1次
+在数组中：即0,1,2,...,i-2次。
+所以内层循环：
+for(i = 0; i &lt;=arr.length - 2;i++);
+再来看外层循环：
+选择我们得到了，0,1,2,...,arr.length-2次，为i。
+就需要控制取值。当需要调换位置的数越多时，调换次数越多；反之，越少。
+即控制arr.length - 2的变化：
+随着执行的次数增加，需要调换的次数减少，所以，就减去一个数实现减少。
+再有，
+i的范围[0,arr.length-2]
+假设减去y，所以
+i = arr.length-2-y
+i=0
+y =  arr.length-2
+i=arr.length-2
+y = 0
+y[0,arr.length-2]
+
+所以外层循环：
+for(y = 0; y &lt;= arr.length-2;y++)
+</code></pre>
+<h2 id="二维数组">二维数组</h2>
+<p>数组中的数组<br>
+arr[[1,2,3],[1,2,3]]<br>
+arr[1][2] = 3<br>
+arr[二维数组下标][一维数组下标]<br>
+其他方法跟以为一样。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[冒泡排序]]></title>
         <id>https://hsuchiaping.github.io/post/mou-pao-pai-xu/</id>
@@ -1456,16 +1552,6 @@ vertical-align:middle(元素的中垂点与父元素的基线加1/2父元素中�
         overflow:hidden;
     }
 </code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[CSS基础——径向渐变]]></title>
-        <id>https://hsuchiaping.github.io/post/css-ji-chu-jing-xiang-jian-bian/</id>
-        <link href="https://hsuchiaping.github.io/post/css-ji-chu-jing-xiang-jian-bian/">
-        </link>
-        <updated>2022-03-31T01:21:41.000Z</updated>
-        <content type="html"><![CDATA[<h1 id="径向渐变-ellipse-gredient">径向渐变 ellipse-gredient</h1>
-<h2 id="概念即椭圆渐变渐变效果沿着椭圆的">概念：即椭圆渐变，渐变效果沿着椭圆的</h2>
 ]]></content>
     </entry>
 </feed>

@@ -5,7 +5,7 @@
     
 <meta charset="utf-8" >
 
-<title>FC容器——IFC容器应用场景 | Gridea</title>
+<title>JS数组 | Gridea</title>
 <meta name="description" content="温故而知新">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -80,51 +80,109 @@
       <div class="content-container">
         <div class="post-detail">
           
-          <h2 class="post-title">FC容器——IFC容器应用场景</h2>
+          <h2 class="post-title">JS数组</h2>
           <div class="post-info post-detail-info">
-            <span><i class="icon-calendar-outline"></i> 2022-03-29</span>
-            
-              <span>
-                <i class="icon-pricetags-outline"></i>
-                
-                  <a href="https://hsuchiaping.github.io/tag/b2T4V1OHu/">
-                    FC容器
-                    
-                  </a>
-                
-              </span>
+            <span><i class="icon-calendar-outline"></i> 2022-04-18</span>
             
           </div>
           <div class="post-content">
-            <h1 id="ifc容器应用场景">IFC容器应用场景</h1>
-<h2 id="font-size">font-size</h2>
-<p>不同字体的大小会影响行盒高度，值越大，行盒高度越高</p>
-<h2 id="font-family">font-family</h2>
-<p>不同字体类型会影响行盒高度</p>
-<h2 id="height-line-height">height | line-height</h2>
-<p>影响高度</p>
-<h2 id="vertical-align">vertical-align</h2>
-<p>行级元素垂直方向上的对其<br>
-top顶线、middle中线、baseline基线、bottom底线</p>
-<h3 id="文本之间">文本之间</h3>
-<p>设置当前元素自己参考哪个位置与其他元素对其，默认是基线</p>
-<h3 id="文本与图片之间">文本与图片之间</h3>
-<p>文本基线对齐图片底部<br>
-文本设置vertical-align：文本按照自己的参考线与图片的底部对齐<br>
-图片设置vertical-align：图片按照自己的参考线与文本对齐</p>
-<h3 id="表格中文字垂直对齐">表格中文字垂直对齐</h3>
-<p>top：顶部对齐<br>
-middle：居中<br>
-bottom：底部对齐</p>
+            <h1 id="数组">数组</h1>
+<h2 id="概念">概念</h2>
+<p>一组有序数据的集合，每个数据有对应的编号：下标、索引。可以利用变化快速检索数据。</p>
+<ol>
+<li>索引
+<ol>
+<li>有数字组成</li>
+<li>取值范围：[0,数组长度)</li>
+</ol>
+</li>
+<li>元素
+<ol>
+<li>数组中存储的数据</li>
+</ol>
+</li>
+</ol>
+<h2 id="语法">语法</h2>
+<ol>
+<li>声明数组
+<ol>
+<li>空数组
+<ol>
+<li><code>var arr = [];</code></li>
+<li><code>var arr = new Array();</code></li>
+</ol>
+</li>
+<li>非空数组
+<ol>
+<li><code>var arr = [1,2,3,4];</code></li>
+<li><code>var arr = new Array(1,2,34,4);</code>当括号内只有一个数字时，会被识别为数组长度</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>向数组中添加数据<br>
+<code>arr[0] = 123;</code></li>
+<li>取出数组中的数据<br>
+<code>console.log(arr[1]);</code></li>
+<li>获取数组长度<br>
+<code>console.log(arr.length);</code></li>
+<li>删除最后一个元素<br>
+<code>arr.length--;</code></li>
+<li>将指定元素赋为空empty<br>
+<code>delete arr[1];</code></li>
+<li>数组遍历
+<ol>
+<li><code>for(i = 0;i &lt;arr.length;i++){}</code></li>
+<li><code>for(var index in arr)</code></li>
+<li><code>for(var n of arr)</code></li>
+</ol>
+</li>
+</ol>
+<h2 id="冒泡排序将数组按照从小到大的顺序排列-两两进行比较-较大的放在后面">冒泡排序：将数组按照从小到大的顺序排列。两两进行比较。较大的放在后面</h2>
+<pre><code>外层循环和内层循环的控制。
+在一组数中，把其中最大的数放到最后，从第一个数开始两两比较，需要n-1次位置调换。n-1就是内层循环的控制数。
+要把第2大的放在倒数第2位，需要n-2次位置调换。
+。
+。
+。
+以此类推，完成完整排序，最后一步需要1次位置调换。
+所以，整个的循环每次的位置调换次数为：1,2,...,n-1次
+在数组中：即0,1,2,...,i-2次。
+所以内层循环：
+for(i = 0; i &lt;=arr.length - 2;i++);
+再来看外层循环：
+选择我们得到了，0,1,2,...,arr.length-2次，为i。
+就需要控制取值。当需要调换位置的数越多时，调换次数越多；反之，越少。
+即控制arr.length - 2的变化：
+随着执行的次数增加，需要调换的次数减少，所以，就减去一个数实现减少。
+再有，
+i的范围[0,arr.length-2]
+假设减去y，所以
+i = arr.length-2-y
+i=0
+y =  arr.length-2
+i=arr.length-2
+y = 0
+y[0,arr.length-2]
+
+所以外层循环：
+for(y = 0; y &lt;= arr.length-2;y++)
+</code></pre>
+<h2 id="二维数组">二维数组</h2>
+<p>数组中的数组<br>
+arr[[1,2,3],[1,2,3]]<br>
+arr[1][2] = 3<br>
+arr[二维数组下标][一维数组下标]<br>
+其他方法跟以为一样。</p>
 
           </div>
         </div>
 
         
           <div class="next-post">
-            <a class="purple-link" href="https://hsuchiaping.github.io/post/fc-rong-qi-ifc/">
+            <a class="purple-link" href="https://hsuchiaping.github.io/post/mou-pao-pai-xu/">
               <h3 class="post-title">
-                下一篇：FC容器——IFC
+                下一篇：冒泡排序
               </h3>
             </a>
           </div>
