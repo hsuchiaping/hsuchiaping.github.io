@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://hsuchiaping.github.io//favicon.ico?v=1650297287521">
+<link rel="shortcut icon" href="https://hsuchiaping.github.io//favicon.ico?v=1650372319230">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://hsuchiaping.github.io//styles/main.css">
 
@@ -30,7 +30,7 @@
   <div class="site-header">
     <div class="left">
       <a href="https://hsuchiaping.github.io/">
-        <img class="avatar" src="https://hsuchiaping.github.io//images/avatar.png?v=1650297287521" alt="" width="32px" height="32px">
+        <img class="avatar" src="https://hsuchiaping.github.io//images/avatar.png?v=1650372319230" alt="" width="32px" height="32px">
       </a>
       <a href="https://hsuchiaping.github.io/">
         <h1 class="site-title">Gridea</h1>
@@ -169,11 +169,37 @@ y[0,arr.length-2]
 for(y = 0; y &lt;= arr.length-2;y++)
 </code></pre>
 <h2 id="二维数组">二维数组</h2>
-<p>数组中的数组<br>
-arr[[1,2,3],[1,2,3]]<br>
-arr[1][2] = 3<br>
-arr[二维数组下标][一维数组下标]<br>
-其他方法跟以为一样。</p>
+<p>数组中的数组</p>
+<ol>
+<li>声明数组<br>
+<code>arr[[1,2,3],[1,2,3]]</code><br>
+<code>var arr = new Array([1,2,3][1,2,3])</code></li>
+<li>添加数据<br>
+<code>arr[1][2] = 3</code></li>
+<li>取出数据<br>
+<code>arr[二维数组参数][一维数组参数]</code></li>
+<li>长度 个数<br>
+<code>arr.length</code></li>
+<li>一维数组的个数<br>
+<code>arr[arr1].length</code></li>
+<li>删除最后一个一维数组<br>
+<code>arr.length--;</code></li>
+<li>删除一维数组中最后一个元素<br>
+<code>arr[arr1].length--</code></li>
+<li>遍历</li>
+</ol>
+<pre><code>for(i = 0;i&lt;arr.length;i++){
+    for(j = 0;j&lt;arr[i].length;j++)
+}
+
+for(var i in arr){
+    for(var j in arr[i])
+}
+
+for(var eArr of arr){
+    for(var e of eArr)
+}
+</code></pre>
 
           </div>
         </div>
