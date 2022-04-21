@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://hsuchiaping.github.io/</id>
     <title>Gridea</title>
-    <updated>2022-04-19T12:45:22.573Z</updated>
+    <updated>2022-04-21T12:26:20.836Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://hsuchiaping.github.io/"/>
     <link rel="self" href="https://hsuchiaping.github.io/atom.xml"/>
@@ -10,6 +10,125 @@
     <logo>https://hsuchiaping.github.io/images/avatar.png</logo>
     <icon>https://hsuchiaping.github.io/favicon.ico</icon>
     <rights>All rights reserved 2022, Gridea</rights>
+    <entry>
+        <title type="html"><![CDATA[数组API]]></title>
+        <id>https://hsuchiaping.github.io/post/shu-zu-api/</id>
+        <link href="https://hsuchiaping.github.io/post/shu-zu-api/">
+        </link>
+        <updated>2022-04-21T11:34:23.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="apiapplication-programming-interface">API：Application Programming Interface</h1>
+<p>应用程序接口<br>
+<code>var arr = [1,2,3,4,5,2]</code></p>
+<ol>
+<li><code>unshift</code> 在数组开头添加一个元素，并返回新数组的长度</li>
+</ol>
+<pre><code>console.log(arr.unshift(1));    //5
+console.log(arr);   //[1,1,2,3,4,5]
+</code></pre>
+<ol start="2">
+<li><code>shift</code> 删除数组开头的元素，并返回被删除的元素</li>
+</ol>
+<pre><code>console.log(arr.shift());   //[1]
+console.log(arr);   //[2,3,4,5]
+</code></pre>
+<ol start="3">
+<li><code>push</code> 在数组末尾添加元素，并返回新数组的长度</li>
+</ol>
+<pre><code>console.log(arr.push);   //[6]
+console.log(arr);   //[1,2,3,4,5,6]
+</code></pre>
+<ol start="4">
+<li><code>pop</code> 删除数组末尾的元素，并返回被删除的元素</li>
+</ol>
+<pre><code>console.log(arr.pop());     //[5]
+console.log(arr);       //[1,2,3,4]
+</code></pre>
+<ol start="5">
+<li><code>splice</code> 添加或者删除数组中的指定的元素，并返回被删除的元素数组；<br>
+参数：
+<ol>
+<li>开始的位置</li>
+<li>删除的个数</li>
+<li>添加的元素</li>
+</ol>
+</li>
+</ol>
+<pre><code>//删除
+console.log(arr.splice(1));     //[2]
+console.log(arr);     //[1,3,4,5]
+//添加
+console.log(arr.splice(1,2,3,3))    //[2,3]
+console.log(arr)    //[1,3,3,4,5]
+</code></pre>
+<ol start="6">
+<li><code>join</code>将数组转为一个字符串，并返回该字符串<br>
+参数：字符串元素间连接的符号</li>
+</ol>
+<pre><code>console.log(arr.join(&quot;-&quot;));     //&quot;1-2-3-4-5&quot;
+</code></pre>
+<ol start="7">
+<li><code>slice</code>截取数组的部分，组成新的数组并返回<br>
+参数：
+<ol>
+<li>开始的位置（要去）</li>
+<li>结束的位置（不取）</li>
+</ol>
+</li>
+</ol>
+<pre><code>console.log(arr.slice(3,5));       //[4,5]
+console.log(arr);       //[1,2,3]
+</code></pre>
+<ol start="8">
+<li><code>concat</code> 合并两个数组到新数组，并返回<br>
+参数：
+<ol>
+<li>要合并的数组</li>
+<li>要合并的数组</li>
+</ol>
+</li>
+</ol>
+<pre><code>var newArr = [];
+console.log(concat(arr));      //[1,2,3,4,5]
+</code></pre>
+<ol start="9">
+<li><code>reverse</code> 反转数组的顺序</li>
+</ol>
+<pre><code>console.log(arr.reverse());     //[5,4,3,2,1]
+</code></pre>
+<ol start="10">
+<li><code>indexOf</code> 查找某个值在数组中第一次出现的下标并返回，不存在返回-1</li>
+</ol>
+<pre><code>console.log(arr.indexOf(2));       //1
+console.log(arr.indexOf(0));       //-1
+</code></pre>
+<ol start="11">
+<li><code>lastIndexOf</code> 查找某个值在数组中最后一次出现的下标并返回，不存在返回-1</li>
+</ol>
+<pre><code>console.log(arr.lastIndexOf(2));       //5
+console.log(arr.lastIndexOf(0));       //-1
+</code></pre>
+<ol start="12">
+<li>回调函数<br>
+在声明函数时，在函数内调用函数，在参数内加上相对应的形式参数，在调用函数时，函数实际参数改为具体函数名。或者在调用函数时，实际参数声明函数。</li>
+</ol>
+<pre><code>function myFunction(arr,method){
+    for(i=0;i&lt;arr.length;i++){
+        method(arr[i],i,arr)
+    }
+}
+function myFunction1(val){
+
+}
+myFunction(arr,myFunction1)
+myFunction(arr,function(val){
+
+})
+</code></pre>
+<ol start="13">
+<li><code>forEach</code>遍历数组内的每个元素</li>
+</ol>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[JS数组]]></title>
         <id>https://hsuchiaping.github.io/post/js-shu-zu/</id>
@@ -1558,26 +1677,6 @@ vertical-align:middle(元素的中垂点与父元素的基线加1/2父元素中�
 </ul>
 </li>
 </ol>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[330作业]]></title>
-        <id>https://hsuchiaping.github.io/post/330-zuo-ye/</id>
-        <link href="https://hsuchiaping.github.io/post/330-zuo-ye/">
-        </link>
-        <updated>2022-03-31T02:04:26.000Z</updated>
-        <content type="html"><![CDATA[<h1 id="开头">开头</h1>
-<pre><code>    设置所有元素的margin、padding为0.
-    *{
-        margin:0px;
-        padding:0px;
-    } 
-    设置页面和body的高度为满屏。
-    html,body{
-        height:100%;
-        overflow:hidden;
-    }
-</code></pre>
 ]]></content>
     </entry>
 </feed>

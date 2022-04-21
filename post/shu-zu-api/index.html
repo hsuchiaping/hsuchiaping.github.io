@@ -1,0 +1,254 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    
+<meta charset="utf-8" >
+
+<title>数组API | Gridea</title>
+<meta name="description" content="温故而知新">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://hsuchiaping.github.io//favicon.ico?v=1650543978655">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://hsuchiaping.github.io//styles/main.css">
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+  </head>
+  <body>
+    <div id="app" class="main">
+      <div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://hsuchiaping.github.io/">
+        <img class="avatar" src="https://hsuchiaping.github.io//images/avatar.png?v=1650543978655" alt="" width="32px" height="32px">
+      </a>
+      <a href="https://hsuchiaping.github.io/">
+        <h1 class="site-title">Gridea</h1>
+      </a>
+    </div>
+    <div class="right">
+      <transition name="fade">
+        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
+      </transition>
+    </div>
+  </div>
+</div>
+
+<transition name="fade">
+  <div class="menu-container" style="display: none;" v-show="menuVisible">
+    <div class="menu-list">
+      
+        
+          <a href="/" class="menu purple-link">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="menu purple-link">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="menu purple-link">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="menu purple-link">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+</transition>
+
+
+      <div class="content-container">
+        <div class="post-detail">
+          
+          <h2 class="post-title">数组API</h2>
+          <div class="post-info post-detail-info">
+            <span><i class="icon-calendar-outline"></i> 2022-04-21</span>
+            
+          </div>
+          <div class="post-content">
+            <h1 id="apiapplication-programming-interface">API：Application Programming Interface</h1>
+<p>应用程序接口<br>
+<code>var arr = [1,2,3,4,5,2]</code></p>
+<ol>
+<li><code>unshift</code> 在数组开头添加一个元素，并返回新数组的长度</li>
+</ol>
+<pre><code>console.log(arr.unshift(1));    //5
+console.log(arr);   //[1,1,2,3,4,5]
+</code></pre>
+<ol start="2">
+<li><code>shift</code> 删除数组开头的元素，并返回被删除的元素</li>
+</ol>
+<pre><code>console.log(arr.shift());   //[1]
+console.log(arr);   //[2,3,4,5]
+</code></pre>
+<ol start="3">
+<li><code>push</code> 在数组末尾添加元素，并返回新数组的长度</li>
+</ol>
+<pre><code>console.log(arr.push);   //[6]
+console.log(arr);   //[1,2,3,4,5,6]
+</code></pre>
+<ol start="4">
+<li><code>pop</code> 删除数组末尾的元素，并返回被删除的元素</li>
+</ol>
+<pre><code>console.log(arr.pop());     //[5]
+console.log(arr);       //[1,2,3,4]
+</code></pre>
+<ol start="5">
+<li><code>splice</code> 添加或者删除数组中的指定的元素，并返回被删除的元素数组；<br>
+参数：
+<ol>
+<li>开始的位置</li>
+<li>删除的个数</li>
+<li>添加的元素</li>
+</ol>
+</li>
+</ol>
+<pre><code>//删除
+console.log(arr.splice(1));     //[2]
+console.log(arr);     //[1,3,4,5]
+//添加
+console.log(arr.splice(1,2,3,3))    //[2,3]
+console.log(arr)    //[1,3,3,4,5]
+</code></pre>
+<ol start="6">
+<li><code>join</code>将数组转为一个字符串，并返回该字符串<br>
+参数：字符串元素间连接的符号</li>
+</ol>
+<pre><code>console.log(arr.join(&quot;-&quot;));     //&quot;1-2-3-4-5&quot;
+</code></pre>
+<ol start="7">
+<li><code>slice</code>截取数组的部分，组成新的数组并返回<br>
+参数：
+<ol>
+<li>开始的位置（要去）</li>
+<li>结束的位置（不取）</li>
+</ol>
+</li>
+</ol>
+<pre><code>console.log(arr.slice(3,5));       //[4,5]
+console.log(arr);       //[1,2,3]
+</code></pre>
+<ol start="8">
+<li><code>concat</code> 合并两个数组到新数组，并返回<br>
+参数：
+<ol>
+<li>要合并的数组</li>
+<li>要合并的数组</li>
+</ol>
+</li>
+</ol>
+<pre><code>var newArr = [];
+console.log(concat(arr));      //[1,2,3,4,5]
+</code></pre>
+<ol start="9">
+<li><code>reverse</code> 反转数组的顺序</li>
+</ol>
+<pre><code>console.log(arr.reverse());     //[5,4,3,2,1]
+</code></pre>
+<ol start="10">
+<li><code>indexOf</code> 查找某个值在数组中第一次出现的下标并返回，不存在返回-1</li>
+</ol>
+<pre><code>console.log(arr.indexOf(2));       //1
+console.log(arr.indexOf(0));       //-1
+</code></pre>
+<ol start="11">
+<li><code>lastIndexOf</code> 查找某个值在数组中最后一次出现的下标并返回，不存在返回-1</li>
+</ol>
+<pre><code>console.log(arr.lastIndexOf(2));       //5
+console.log(arr.lastIndexOf(0));       //-1
+</code></pre>
+<ol start="12">
+<li>回调函数<br>
+在声明函数时，在函数内调用函数，在参数内加上相对应的形式参数，在调用函数时，函数实际参数改为具体函数名。或者在调用函数时，实际参数声明函数。</li>
+</ol>
+<pre><code>function myFunction(arr,method){
+    for(i=0;i&lt;arr.length;i++){
+        method(arr[i],i,arr)
+    }
+}
+function myFunction1(val){
+
+}
+myFunction(arr,myFunction1)
+myFunction(arr,function(val){
+
+})
+</code></pre>
+<ol start="13">
+<li><code>forEach</code>遍历数组内的每个元素</li>
+</ol>
+
+          </div>
+        </div>
+
+        
+          <div class="next-post">
+            <a class="purple-link" href="https://hsuchiaping.github.io/post/js-shu-zu/">
+              <h3 class="post-title">
+                下一篇：JS数组
+              </h3>
+            </a>
+          </div>
+          
+      </div>
+
+      
+
+      <div class="site-footer">
+  <div class="slogan">温故而知新</div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://hsuchiaping.github.io//atom.xml" target="_blank">RSS</a>
+</div>
+
+
+    </div>
+    <script type="application/javascript">
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+  </body>
+</html>
