@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://hsuchiaping.github.io//favicon.ico?v=1650543978655">
+<link rel="shortcut icon" href="https://hsuchiaping.github.io//favicon.ico?v=1650553837588">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://hsuchiaping.github.io//styles/main.css">
 
@@ -30,7 +30,7 @@
   <div class="site-header">
     <div class="left">
       <a href="https://hsuchiaping.github.io/">
-        <img class="avatar" src="https://hsuchiaping.github.io//images/avatar.png?v=1650543978655" alt="" width="32px" height="32px">
+        <img class="avatar" src="https://hsuchiaping.github.io//images/avatar.png?v=1650553837588" alt="" width="32px" height="32px">
       </a>
       <a href="https://hsuchiaping.github.io/">
         <h1 class="site-title">Gridea</h1>
@@ -195,8 +195,138 @@ myFunction(arr,function(val){
 })
 </code></pre>
 <ol start="13">
-<li><code>forEach</code>遍历数组内的每个元素</li>
+<li><code>forEach</code>遍历数组内的每个元素，并将其放到回调函数使用
+<ol>
+<li>参数：回调函数</li>
+<li>回调函数的参数：
+<ol>
+<li>要操作的元素</li>
+<li>元素的索引</li>
+<li>数组</li>
 </ol>
+</li>
+<li>返回值：无</li>
+</ol>
+</li>
+</ol>
+<pre><code>arr.forEach(function(val){
+    执行的代码
+})
+</code></pre>
+<ol start="14">
+<li><code>filter</code> 过滤，遍历数组中的每个元素，执行回调函数，将回调函数为true的当前元素添加到新数组，循环完毕，返回新数组。
+<ol>
+<li>参数：回调函数</li>
+<li>回调函数参数：
+<ol>
+<li>要操作的元素</li>
+<li>元素的索引</li>
+<li>数组</li>
+</ol>
+</li>
+<li>回调函数返回值：boolean</li>
+<li>返回值：过滤元素组成的新数组</li>
+</ol>
+</li>
+</ol>
+<pre><code>arr.filter(function(val){
+    return 执行代码
+})
+</code></pre>
+<ol start="15">
+<li><code>map</code>对数组所有元素执行回调函数，将回调函数的返回值储存到新数组，循环完毕，将新数组返回。</li>
+<li>参数：回调函数</li>
+<li>回调函数参数：
+<ol>
+<li>要操作的元素</li>
+<li>元素的索引</li>
+<li>数组</li>
+</ol>
+</li>
+<li>回调函数返回值：任意</li>
+<li>返回值：回调函数返回值组成的新数组</li>
+</ol>
+<pre><code>arr.map(function(val){
+    return 执行代码
+})
+</code></pre>
+<ol start="16">
+<li><code>sort</code>对数组进行排序，执行回调函数，将回调函数的返回值作为排序方式。</li>
+<li>参数：回调函数</li>
+<li>回调函数参数：
+<ol>
+<li>要操作的元素1</li>
+<li>要操作的元素2</li>
+</ol>
+</li>
+<li>回调函数返回值：<code>&gt;0 or &lt;0</code>;
+<ol>
+<li>大于0，则将a放在后面</li>
+<li>小于0，则将a放在前面</li>
+</ol>
+</li>
+<li>返回值：排好序的数组</li>
+</ol>
+<pre><code>arr.sort(function(a,b){
+    return a-b;
+})
+</code></pre>
+<ol start="17">
+<li><code>some</code>检查数组中是否有任意一个元素通过测试。对每个元素执行回调函数，有任意一个回调函数的返回值为true，则循环结束，返回结果为true。</li>
+<li>参数：回调函数</li>
+<li>回调函数参数：
+<ol>
+<li>要操作的元素</li>
+<li>元素的索引</li>
+<li>数组</li>
+</ol>
+</li>
+<li>回调函数返回值：boolean;</li>
+<li>返回值：boolean；根据回调函数返回值确定。</li>
+<li><code>every</code>检查数组中是否所有元素通过测试。对每个元素执行回调函数，有任意一个回调函数的返回值为false，则循环结束，返回结果为false。</li>
+<li>参数：回调函数</li>
+<li>回调函数参数：
+<ol>
+<li>要操作的元素</li>
+<li>元素的索引</li>
+<li>数组</li>
+</ol>
+</li>
+<li>回调函数返回值：boolean;</li>
+<li>返回值：boolean；根据回调函数返回值确定。</li>
+<li><code>reduce</code>将数组元素数量减为1个，对每个元素执行回调函数，将每次回调函数的返回值作为下一次回调函数的参数传入，循环结束，最后一次回调函数的返回值作为reduce的返回值。</li>
+<li>参数：回调函数，初始参数（param）</li>
+<li>回调函数参数：
+<ol>
+<li>param</li>
+<li>要操作的元素</li>
+<li>元素的索引</li>
+<li>数组</li>
+</ol>
+</li>
+<li>回调函数返回值：旧的param;</li>
+<li>返回值：最后一次回调函数的返回值。</li>
+</ol>
+<pre><code>arr.reduce(function(param,val){
+    return param = param + val
+},传入回调函数的初始参数)
+</code></pre>
+<ol start="20">
+<li><code>includes</code>    查数组中是否包含指定元素。</li>
+<li>参数：
+<ol>
+<li>要找的元素</li>
+<li>开始索引，默认为0</li>
+</ol>
+</li>
+<li>返回值
+<ol>
+<li>boolean，存在为true，不存在为false</li>
+</ol>
+</li>
+</ol>
+<pre><code>arr.includes(1,2)
+</code></pre>
 
           </div>
         </div>
